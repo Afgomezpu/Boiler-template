@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
+import { PagesComponent } from './pages/pages/pages.component';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { ServicesProvider } from "../providers/services";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    PagesComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ServicesProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
