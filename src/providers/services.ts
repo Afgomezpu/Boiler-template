@@ -1,27 +1,35 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpClient,
   HttpHeaders,
   HttpRequest,
   HttpErrorResponse,
-} from "@angular/common/http";
-import { catchError, retry } from "rxjs/operators";
+} from '@angular/common/http';
+//importaciones del modal
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+import { ModalComponent } from '../pages/components/modal/modal.component';
 
-import { URL, WEBSERVICE } from "../config/webservices";
-import { throwError } from "rxjs";
+import { catchError, retry } from 'rxjs/operators';
+
+import { URL, WEBSERVICE } from '../config/webservices';
+import { throwError } from 'rxjs';
 
 @Injectable()
 export class ServicesProvider {
   private sUrl: string = URL;
   bPreloader: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public modal: MatDialog) {}
 
   public handleError(error: HttpErrorResponse) {
     if (error.status == 404) {
-      alert("el servicio no existe");
+      alert('el servicio no existe');
     } else {
-      alert("el servicio tiene un problema con los datos");
+      alert('el servicio tiene un problema con los datos');
     }
     return [];
   }
@@ -29,7 +37,7 @@ export class ServicesProvider {
     const httpOptions = {
       params,
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       }),
       withCredentials: true,
     };
@@ -46,7 +54,7 @@ export class ServicesProvider {
     };
 
     if (token) {
-      httpOptions.headers.append("token", token);
+      httpOptions.headers.append('token', token);
     }
 
     return this.http
@@ -58,22 +66,22 @@ export class ServicesProvider {
   public preloaderOff() {
     this.bPreloader = false;
 
-    if (document.querySelector("#preloader")) {
-      document.querySelector("#preloader")!.classList.remove("d-block");
-      document.querySelector("#preloader")!.classList.add("d-none");
+    if (document.querySelector('#preloader')) {
+      document.querySelector('#preloader')!.classList.remove('d-block');
+      document.querySelector('#preloader')!.classList.add('d-none');
     }
   }
 
   public preloaderOn() {
     this.bPreloader = true;
 
-    if (document.querySelector("#preloader")) {
-      document.querySelector("#preloader")!.classList.remove("d-none");
-      document.querySelector("#preloader")!.classList.add("d-block");
+    if (document.querySelector('#preloader')) {
+      document.querySelector('#preloader')!.classList.remove('d-none');
+      document.querySelector('#preloader')!.classList.add('d-block');
     } else {
-      const d1 = document.querySelector("body");
+      const d1 = document.querySelector('body');
       d1!.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `
         <div id="preloader" class="position-fixed" style="top:0px; z-index:99999999999999999999999;">
           <div class="position-fixed backdrop_preload w-100 h-100vh d-flex justify-content-center align-items-center">
@@ -85,5 +93,35 @@ export class ServicesProvider {
         </div>`
       );
     }
+  }
+
+  generarPopupGenerico(
+    titulo: string,
+    cuerpo: string,
+    funcion?: any,
+    scope?: any,
+    param?: any
+  ) {
+    let json_modal: any = {};
+    json_modal.cuerpo = cuerpo;
+    if (titulo.toLowerCase() == 'exito' || titulo.toLowerCase() == 'éxito') {
+      json_modal.estilo = 'success';
+      json_modal.titulo = 'Éxito';
+    } else if (titulo.toLowerCase() == 'error') {
+      json_modal.estilo = 'danger';
+      json_modal.titulo = 'Error';
+    } else {
+      json_modal.estilo = 'warning';
+      json_modal.titulo = 'Advertencia';
+    }
+
+    json_modal.component = scope;
+    json_modal.funcion = funcion;
+    json_modal.param = param;
+
+    const dialogRef = this.modal.open(ModalComponent, {
+      width: '250px',
+      data: json_modal,
+    });
   }
 }

@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { WEBSERVICE, URL } from "../../../config/webservices";
-import { ServicesProvider } from "../../../providers/services";
+import { WEBSERVICE, URL } from '../../config/webservices';
+import { ServicesProvider } from '../../providers/services';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   data: object = {};
-  constructor(public serviceProvider: ServicesProvider) { 
+  constructor(public serviceProvider: ServicesProvider) {
     console.log(URL + WEBSERVICE.LOGIN);
   }
 
@@ -21,13 +20,13 @@ export class LoginComponent implements OnInit {
   fn_ConsumirServicioWeb() {
     console.log(1);
     let oSendData = {
-      title: "foo",
-      body: "bar",
+      title: 'foo',
+      body: 'bar',
       userId: 1,
     };
     this.serviceProvider.preloaderOn();
     this.serviceProvider
-      .post("posts", oSendData)
+      .post('posts', oSendData)
       .then((data) => {
         console.log(2);
         this.data = data;
@@ -35,11 +34,10 @@ export class LoginComponent implements OnInit {
         this.serviceProvider.preloaderOff();
       })
       .catch((err) => {
-        console.log(err, "problema");
+        console.log(err, 'problema');
       })
       .finally(() => {
         this.serviceProvider.preloaderOff();
       });
   }
-
 }

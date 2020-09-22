@@ -1,0 +1,63 @@
+<div
+  class="modal-header m-0 p-0 position-relative"
+  [ngClass]="{
+    modal_success_bg: data.estilo == 'success',
+    modal_warning_bg: data.estilo == 'warning',
+    modal_danger_bg: data.estilo == 'danger'
+  }"
+>
+  <div class="d-flex flex-center w-100">
+    <i
+      class="fa-5x py-5 animated fadeInRight"
+      [ngClass]="{
+        'modal_success_bg far fa-check-circle': data.estilo == 'success',
+        'modal_warning_bg fa fa-exclamation-triangle': data.estilo == 'warning',
+        'modal_danger_bg fas fa-times-circle': data.estilo == 'danger'
+      }"
+    >
+    </i>
+  </div>
+  <div
+    class="text-white position-absolute pointer"
+    style="right: 10px; top:10px; background:transparent; font-size: 15px;"
+    (click)="onNoClick()"
+  >
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+<div class="modal-body">
+  <h5 class="arthur  text-center p-0 m-0 mt-1">¡{{ data.titulo }}!</h5>
+  <h6
+    class="my-0 mt-2 arthur text-center"
+    style="font-weight: 100;
+  font-size: 1.1rem;"
+  >
+    {{ data.cuerpo }}
+  </h6>
+</div>
+<div class="modal-footer d-flex justify-content-center">
+  <button
+    mat-raised-button
+    class="mr-3"
+    *ngIf="data.component"
+    [ngClass]="{
+      modal_success_bg: data.estilo == 'success',
+      modal_warning_bg: data.estilo == 'warning',
+      modal_danger_bg: data.estilo == 'danger'
+    }"
+    (click)="funcion_ok(); onNoClick()"
+  >
+    Aceptar
+  </button>
+  <button
+    mat-raised-button
+    (click)="onNoClick()"
+    [ngClass]="{
+      modal_success_bg: data.estilo == 'success',
+      modal_warning_bg: data.estilo == 'warning',
+      modal_danger_bg: data.estilo == 'danger'
+    }"
+  >
+    Cerrar
+  </button>
+</div>
