@@ -3,11 +3,11 @@ import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class DemoComponent implements OnInit {
   data: object = {};
   constructor(public serviceProvider: ServicesProvider) {
     console.log(URL + WEBSERVICE.LOGIN);
@@ -15,6 +15,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.fn_ConsumirServicioWeb();
+    setTimeout(() => {
+      this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
+    }, 5000);
+  }
+
+  fn_EliminarCliente(id) {
+    alert('entra' + id);
   }
 
   fn_ConsumirServicioWeb() {
@@ -26,12 +33,18 @@ export class LoginComponent implements OnInit {
     };
     this.serviceProvider.preloaderOn();
     this.serviceProvider
-      .post('posts', oSendData)
+      .post('post5', oSendData)
       .then((data) => {
-        console.log(2);
-        this.data = data;
         console.log(data);
-        this.serviceProvider.preloaderOff();
+        if (data) {
+          this.serviceProvider.fn_GenerarPopupGenerico(
+            'advertencia',
+            '¿Esta seguro de que desea eliminar los datos?',
+            'fn_EliminarCliente',
+            this,
+            1
+          );
+        }
       })
       .catch((err) => {
         console.log(err, 'problema');

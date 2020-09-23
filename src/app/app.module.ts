@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //declaraciones componentes
-import { LoginComponent } from '../pages/login/login.component';
-import { PagesComponent } from '../pages/pages/pages.component';
+import { LoginComponent, DemoComponent } from '../pages/index.pages';
 import { ModalComponent } from '../pages/components/modal/modal.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -16,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* importaciones material*/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularBootstrapToastsModule } from 'angular-bootstrap-toasts';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {
@@ -50,12 +51,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 */
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PagesComponent, ModalComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    AngularBootstrapToastsModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

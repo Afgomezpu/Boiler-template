@@ -12,6 +12,8 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { ModalComponent } from '../pages/components/modal/modal.component';
+//importación de toast
+import { AngularBootstrapToastsService } from 'angular-bootstrap-toasts';
 
 import { catchError, retry } from 'rxjs/operators';
 
@@ -23,15 +25,22 @@ export class ServicesProvider {
   private sUrl: string = URL;
   bPreloader: boolean = false;
 
-  constructor(private http: HttpClient, public modal: MatDialog) {}
+  constructor(
+    private http: HttpClient,
+    public modal: MatDialog,
+    private toastsService: AngularBootstrapToastsService
+  ) {}
 
   public handleError(error: HttpErrorResponse) {
+    let sMensajeError = '';
+    console.log(this, error);
     if (error.status == 404) {
-      alert('el servicio no existe');
+      sMensajeError = 'El servicio al cual se intenta acceder, no existe.';
     } else {
-      alert('el servicio tiene un problema con los datos');
+      sMensajeError = 'Ha ocurrido un problema al obtener los datos';
     }
-    return [];
+    this.fn_GenerarPopupGenerico('error', sMensajeError);
+    throw 'Unable to handle';
   }
   public get(inUrl: string, params?: any, token?: any) {
     const httpOptions = {
@@ -44,7 +53,7 @@ export class ServicesProvider {
 
     return this.http
       .get(this.sUrl + inUrl, httpOptions)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handleError.bind(this)))
       .toPromise();
   }
 
@@ -59,7 +68,7 @@ export class ServicesProvider {
 
     return this.http
       .post(this.sUrl + inUrl, params, httpOptions)
-      .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handleError.bind(this))) // estose usa para que se pueda usar el this dentro de la funcionhandle error
       .toPromise();
   }
 
@@ -95,7 +104,15 @@ export class ServicesProvider {
     }
   }
 
-  generarPopupGenerico(
+  //objetivo: se genera un popup generico para mostar mensajes tipo, "se ha insertado correctamente", " ha ocurrido un error" también puede ejecutar una accion con hacer click
+
+  //titulo: exito | advertencia | error
+  //cuerpo: cualquier mensaje ej: se ha insertado con exito
+  //para que aparezcan 2 botones, se deben de poner los siguientes 3 parámetros, y se generará un botón con el texto aceptar que llamará a la función y el cerrar, cerrará el modal
+  // funcion: funcion a llamar ej:  "fn_EliminarCliente" (sin paréntesis)
+  // scope: objetode clase poner siempre this
+  //param:  es el valor del parametro. ej:  1
+  fn_GenerarPopupGenerico(
     titulo: string,
     cuerpo: string,
     funcion?: any,
@@ -120,8 +137,36 @@ export class ServicesProvider {
     json_modal.param = param;
 
     const dialogRef = this.modal.open(ModalComponent, {
-      width: '250px',
       data: json_modal,
+      height: '324px',
+      width: '600px',
     });
+  }
+
+  //muestra un toast
+
+  //tipo: exito | advertencia | error
+  //mensaje:  puede ser cualquier cosa
+  //duracion: duracion en milisegundos
+  fn_GenerarToast(tipo: any, mensaje: any, duracion?: number) {
+    let json_toast: any = {};
+    if (tipo.toLowerCase() == 'exito' || tipo.toLowerCase() == 'éxito') {
+      json_toast.title = 'Éxito';
+      json_toast.iconClass = 'fas fa-check text-green';
+      json_toast.titleClass = 'modal_success_bg';
+    } else if (tipo.toLowerCase() == 'error') {
+      json_toast.title = 'Error';
+      json_toast.iconClass = 'fas fa-exclamation';
+      json_toast.titleClass = 'modal_danger_bg';
+    } else {
+      json_toast.title = 'Advertencia';
+      json_toast.iconClass = 'fa fa-exclamation-triangle';
+
+      json_toast.titleClass = 'modal_warning_bg';
+    }
+    json_toast.text = mensaje;
+    json_toast.duration = duracion || 3000;
+
+    this.toastsService.showSimpleToast(json_toast);
   }
 }

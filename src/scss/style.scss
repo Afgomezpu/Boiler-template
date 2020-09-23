@@ -1,21 +1,115 @@
 // If you want to override variables do it here
-@import "variables";
+@import "./variables.scss";
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 
 // Import styles
-@import "~@coreui/coreui/scss/coreui";
 
-// If you want to add something do it here
-@import "custom";
+/* fixed styles md boostrap*/
+
+button:focus {
+  outline: none !important;
+}
+
+.h1,
+h1 {
+  font-size: 2.5rem !important;
+}
+.h2,
+h2 {
+  font-size: 2rem !important;
+}
+.h3,
+h3 {
+  font-size: 1.75rem !important;
+}
+.h4,
+h4 {
+  font-size: 1.5rem !important;
+}
+.h5,
+h5 {
+  font-size: 1.25rem !important;
+}
+.h6,
+h6 {
+  font-size: 1rem !important;
+}
+
+/* fin fixed*/
 
 /* clases genericas*/
 .sombra {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .h-100vh {
   height: 100vh;
 }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* fin clases genericas */
+
+/* toast */
+._toast {
+  border: none !important;
+}
+._toast-body {
+  font-size: 15px !important;
+  font-weight: 100;
+}
+/* */
+
+/* estilos modal generico */
+
+.mat-dialog-container {
+  padding: 0px !important;
+  border-radius: 10px !important;
+}
+
+.modal_success_bg {
+  background: #3fc59d !important;
+  color: white !important;
+}
+.modal_warning_bg {
+  background: #ffb853 !important;
+  color: white !important;
+}
+.modal_danger_bg {
+  background: #c55952 !important;
+  color: white !important;
+}
+.fa-trash {
+  color: rgb(143, 10, 10);
+}
+.border {
+  border: 1px solid red;
+}
+.btn.modal_success_bg {
+  border: 1px solid #3fc59d;
+}
+.btn.modal_warning_bg {
+  border: 1px solid #ffb853;
+}
+.btn.modal_danger_bg {
+  border: 1px solid #c55952;
+}
+
+/* fin estilos modal generico */
 
 /* Preloader*/
 

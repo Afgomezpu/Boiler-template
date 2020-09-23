@@ -21,9 +21,9 @@
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/custom-theme.scss",
+              "src/scss/custom-theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss",
+              "src/scss/style.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/animate.css/animate.min.css"
             ],
@@ -85,7 +85,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/scss/style.scss"],
             "scripts": []
           }
         },
