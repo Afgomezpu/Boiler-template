@@ -166,3 +166,45 @@ h6 {
 }
 
 /* fin preloader */
+
+/* tour */
+
+.enjoyhint_next_btn,
+.enjoyhint_close_btn,
+.enjoyhint_skip_btn,
+.enjoyhint_prev_btn,
+.enjoyhint_close_btn {
+  color: white;
+  background: $verde_secondary;
+  border: 2px solid $verde_secondary;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.enjoyhint_next_btn:hover,
+.enjoyhint_close_btn:hover,
+.enjoyhint_skip_btn:hover,
+.enjoyhint_prev_btn:hover,
+.enjoyhint_close_btn:hover {
+  color: white;
+  background: $verde_primary;
+  border: 2px solid $verde_primary;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.error {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+.error-color {
+  color: #dc3545 !important;
+}
+
+.pos_texto_error {
+  width: 100%;
+  /*position: absolute;
+  left: -50%;*/
+  /*bottom: -14px; 
+  transform: translate(50%, 0);*/
+  text-align: center;
+}
+/* fin tour*/
