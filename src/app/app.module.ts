@@ -35,6 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SwiperComponent } from '../pages/components/swiper/swiper.component';
 
 /*import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -51,7 +52,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 */
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
