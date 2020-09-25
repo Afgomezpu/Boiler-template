@@ -161,7 +161,6 @@ export class ServicesProvider {
     } else {
       json_toast.title = 'Advertencia';
       json_toast.iconClass = 'fa fa-exclamation-triangle';
-
       json_toast.titleClass = 'modal_warning_bg';
     }
     json_toast.text = mensaje;

@@ -1,7 +1,7 @@
 <div class="modal_inicio_container d-flex justify-content-center align-items-center "
   [hidden]="!bShowModalNuevosCambios">
   <div class="modal_inicio sombra rounded animate__animated animate__slideInUp position-relative">
-    <i class="icon_cerrar_modal_nuevo fas fa-times-circle fa-2x" (click)="bShowModalNuevosCambios=false"></i>
+    <i class="icon_cerrar_modal_nuevo fas fa-times-circle fa-2x" (click)="onNoClick()"></i>
     <div class="swiper-container  bg-wave h-100" >
       <div class="swiper-wrapper">
         <div class="swiper-slide w-100" data-hash="slide1" >
@@ -23,8 +23,8 @@
             </div>
           </div>
         </div>
-        <div class="swiper-slide  w-100" data-hash="slide2">
-          <div class="h-100 d-flex align-items-center">
+        <div class="swiper-slide  w-90" data-hash="slide2">
+          <div class="h-100 d-flex align-items-center+10">
             <ul class="mx-5 list-group-flush w-100 p-0 " id="modal_nuevo">
               <li class="list-group-item d-flex justify-content-between align-items-center "
                 *ngFor="let nuevo_cambio of oNuevoModal?.nuevos_cambios">
@@ -36,8 +36,10 @@
                 </div>
               </li>
               <li class="list-group-item d-flex justify-content-center">
-                <button (click)="bShowModalNuevosCambios=false" type="submit"
-                  class="btn-success verde_primary btn  px-4 py-2 mt-2">
+                <button (click)="onNoClick()" type="submit"
+                  class="btn-success verde_primary btn  px-4 py-2 mt-2"
+                  aria-label="Close"
+                >
                   Terminar
                 </button>
               </li>

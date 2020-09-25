@@ -1,29 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
+import {SwiperComponent} from '../components/swiper/swiper.component'
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+
+import {MAT_TOOLTIP_DEFAULT_OPTIONS, MatTooltipDefaultOptions} from '@angular/material/tooltip';
 //./../assets/lib/jquery.enjoyhint.js
 //import '../../assets/lib/jquery.enjoyhint.js';
 declare var EnjoyHint: any;
+
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss'],
 })
+
 export class DemoComponent implements OnInit {
   bPrimeraVezLupa: boolean = !localStorage.getItem('tour') ? true : false;
   data: object = {};
-  constructor(public serviceProvider: ServicesProvider) {
+  constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,) {
+    
     console.log(URL + WEBSERVICE.LOGIN);
   }
+
+   swiper(){
+    const dialogRef = this.Swiper.open(SwiperComponent)
+   }
 
   ngOnInit(): void {
     this.fn_ConsumirServicioWeb();
     setTimeout(() => {
       this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
-      this.fn_AbrirTour();
     }, 5000);
   }
+
+  
 
   fn_EliminarCliente(id) {
     alert('entra' + id);
@@ -38,7 +54,7 @@ export class DemoComponent implements OnInit {
     };
     this.serviceProvider.preloaderOn();
     this.serviceProvider
-      .post('post5', oSendData)
+      .post('posts', oSendData)
       .then((data) => {
         console.log(data);
         if (data) {

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject} from '@angular/core';
 import Swiper from "swiper";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-swiper',
@@ -10,7 +15,11 @@ export class SwiperComponent implements OnInit {
   swiper: any;
   bShowModalNuevosCambios: boolean = false; // permite mostrar o no el modal que muestra nuevos cambios
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<SwiperComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+   ) 
+ { }
+
 
   ngOnInit(): void {
     this.swiper = new Swiper(".swiper-container", {
@@ -51,6 +60,10 @@ export class SwiperComponent implements OnInit {
   fn_abrirModalInicial() {
     this.bShowModalNuevosCambios = true;
   }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
   formatDate(date) {
     var d = new Date(date),
       month = "" + (d.getMonth() + 1),
