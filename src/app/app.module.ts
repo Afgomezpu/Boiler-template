@@ -31,26 +31,18 @@ import {
 import { MatPaginatorIntlEsp } from '../traductions/matPaginatorIntl';
 //import { MomentDateAdapter } from "@angular/material-moment-adapter";
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from '@angular/material/dialog';
 import { SwiperComponent } from '../pages/components/swiper/swiper.component';
 
-/*import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
-*/
+import {MatButtonModule} from '@angular/material/button';
+
+import {MatDialogModule} from '@angular/material/dialog';
+
+import {MatInputModule} from '@angular/material/input';
+
+
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent],
   imports: [
@@ -68,6 +60,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDialogModule,
     CommonModule,
   ],
+
   providers: [
     ServicesProvider,
     { provide: MatPaginatorIntl, useClass: MatPaginatorIntlEsp },
