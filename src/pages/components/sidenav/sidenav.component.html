@@ -1,0 +1,20 @@
+<p>
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+                 <a href="#">item1</a>
+                 <br>
+                 <a href="#">item2</a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+      <p><button mat-button (click)="sidenav.toggle()">
+        <i class="fas fa-bars"></i>
+      </button></p>
+      <span>Principal</span>
+    </mat-toolbar>
+    <app-demo></app-demo>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</p>
+   

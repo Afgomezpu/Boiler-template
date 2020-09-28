@@ -1,5 +1,71 @@
 // If you want to override variables do it here
 @import "./variables.scss";
+
+@font-face {
+  font-family: roboto-Condensed;
+  src: url(../assets/font/Roboto-Condensed.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../assets/font/Roboto-Light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: arvo-italic;
+  src: url(../assets/font/Arvo-Italic.ttf) format("opentype");
+}
+@font-face {
+  font-family: quicksand-regular;
+  src: url(../assets/font/Quicksand-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: blogger-sans;
+  src: url(../assets/font/Blogger_Sans-Italic.otf) format("opentype");
+}
+/*
+fuentes adicionales 
+*/
+
+.font_blogger-sans{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'blogger-sans';
+}
+
+.font_roboto_light{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto-light';
+}
+
+.font_roboto_Condensed{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto-Condensed';
+}
+
+.font_quicksand-regular{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'quicksand-regular';
+}
+
+.font_arvo-italic{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'arvo-italic';
+}
+
+/*
+fin fuentes adicionales
+*/
 body,
 html {
   height: 100%;
@@ -7,6 +73,57 @@ html {
   margin: 0px;
   padding: 0px;
 }
+/*
+Color botones 
+*/
+.btn_azul_oscuro{
+  background-color: $azul_oscuro !important;
+  color:$blanco;
+  }
+
+.btn_azul{
+  background-color: $azul !important;
+  color:$blanco;
+    } 
+.btn_azul_claro{
+  background-color: $azul_claro !important;
+  color:$blanco;
+  }
+  
+.btn_azul_agua_marina{
+  background-color: $azul_agua_marina !important;
+  color:$blanco;
+    }
+
+.btn_gris_primary{
+  background-color: $gris_primary !important;
+  color:$blanco;
+      }
+
+.btn_gris_claro{
+  background-color: $gris_claro !important;
+  color:$blanco;
+    }
+.btn_verde_primary{
+  background-color: $verde_primary !important;
+  color:$blanco;
+     }
+
+.btn_verde_secondary{
+  background-color: $verde_secondary!important;
+  color:$blanco;
+      }     
+
+.btn_gris_secondary{
+ background-color: $gris_secondary !important;
+ color:$blanco;
+      }
+  /*
+cierre estilos de colores botones
+*/
+
+
+
 /* swiper*/
 .swiper-pagination-bullet-active {
   background-color: $verde_primary !important;
@@ -150,6 +267,76 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.bg_verde_primary{ 
+  background:$verde-primary !important; 
+}
+
+.text_verde_primary{ 
+  color: $verde-primary  !important
+}
+.bg_azul_oscuro{ 
+  background:$azul_oscuro !important; 
+}
+
+.text_azul_oscuro{ 
+  color: $azul_oscuro  !important
+}
+.bg_azul{ 
+  background:$azul !important; 
+}
+
+.text_azul{ 
+  color: $azul  !important
+}
+.bg_azul_claro{ 
+  background:$azul_claro !important; 
+}
+
+.text_azul_claro{ 
+  color: $azul_claro  !important
+}
+.bg_azul_agua_marina{ 
+  background:$azul_agua_marina !important; 
+}
+
+.text_azul_agua_marina{ 
+  color: $azul_agua_marina !important
+}
+.bg_gris_primary{ 
+  background:$gris_primary !important; 
+}
+
+.text_gris_primary{ 
+  color: $gris_primary  !important
+}
+.bg_gris_claro{ 
+  background:$gris_claro !important; 
+}
+
+.text_gris_claro{ 
+  color: $gris_claro !important
+}
+.bg_verde_secondary{ 
+  background:$verde_secondary!important; 
+}
+
+.text_verde_secondary{ 
+  color: $verde_secondary  !important
+}
+.bg_gris_secondary{ 
+  background:$gris_secondary !important; 
+}
+
+.text_gris_secondary{ 
+  color: $gris_secondary  !important
+}
+.bg_text_primary{ 
+  background:$text_primary !important; 
+}
+
+.text_text_primary{ 
+  color: $text_primary  !important
 }
 
 /* fin clases genericas */

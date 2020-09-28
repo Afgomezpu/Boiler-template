@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* importaciones material*/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularBootstrapToastsModule } from 'angular-bootstrap-toasts';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {
@@ -33,18 +33,22 @@ import { MatPaginatorIntlEsp } from '../traductions/matPaginatorIntl';
 
 import { CommonModule } from '@angular/common';
 import { SwiperComponent } from '../pages/components/swiper/swiper.component';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list'
 
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatInputModule} from '@angular/material/input';
+import { SidenavComponent } from '../pages/components/sidenav/sidenav.component';
+import { ToolbarComponent } from '../pages/components/toolbar/toolbar.component';
+
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -59,6 +63,9 @@ import {MatInputModule} from '@angular/material/input';
     MatPaginatorModule,
     MatDialogModule,
     CommonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule
   ],
 
   providers: [
