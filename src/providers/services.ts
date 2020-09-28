@@ -173,7 +173,7 @@ export class ServicesProvider {
     this.toastsService.showSimpleToast(json_toast);
   }
 
-  fn_AbrirTour() {
+  fn_AbrirTour(pasos:any) {
     //this.serviceProvider.esconder_contenedor_busqueda = false;
     localStorage.setItem('tour', 'true');
     this.bPrimeraVezLupa = false;
@@ -182,26 +182,7 @@ export class ServicesProvider {
       skipButton: { className: 'mySkip', text: 'Omitir' },
     };
 
-    let pasos = [
-      {
-        selector: '#card',
-        event: 'click',
-        description:
-          'La opción de búsqueda permitirá realizar una búsqueda y abrirá el panel del mismo',
-        showNext: true,
-        showPrev: true,
-        busqueda_realizada: true,
-      },
-      {
-        selector: '.titulo',
-        event: 'click',
-        description:
-          'Otra alternativa para abrir el panel de búsqueda, es haciendo click desde esta pestaña lateral ',
-        showNext: true,
-        showPrev: true,
-        busqueda_realizada: true,
-      },
-    ];
+    
     var enjoyhint_script_data = pasos;
     /*var enjoyhint_script_data = pasos.filter(
       (paso) => !paso.busqueda_realizada == !this.dashboardService.bCheckData

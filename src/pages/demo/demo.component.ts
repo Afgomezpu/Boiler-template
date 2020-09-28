@@ -22,6 +22,8 @@ declare var EnjoyHint: any;
 
 export class DemoComponent implements OnInit {
   
+
+  
   data: object = {};
   constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,) {
     
@@ -39,9 +41,34 @@ export class DemoComponent implements OnInit {
     }, 5000);
   }
 
+
+
   fn_generarTour(){
-    this.serviceProvider.fn_AbrirTour();
+    let pasos = [
+      {
+        selector: '#card',
+        event: 'click',
+        description:
+          'La opción de búsqueda permitirá realizar una búsqueda y abrirá el panel del mismo',
+        showNext: true,
+        showPrev: true,
+        busqueda_realizada: true,
+      },
+      {
+        selector: '.titulo',
+        event: 'click',
+        description:
+          'Otra alternativa para abrir el panel de búsqueda, es haciendo click desde esta pestaña lateral ',
+        showNext: true,
+        showPrev: true,
+        busqueda_realizada: true,
+      },
+    ];
+    
+    this.serviceProvider.fn_AbrirTour(pasos);
   }  
+
+
 
   fn_EliminarCliente(id) {
     alert('entra' + id);
