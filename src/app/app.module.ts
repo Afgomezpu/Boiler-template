@@ -24,6 +24,7 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
+import {MatStepperModule} from '@angular/material/stepper';
 import {
   MatPaginatorModule,
   MatPaginatorIntl,
@@ -43,12 +44,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { SidenavComponent } from '../pages/components/sidenav/sidenav.component';
 import { ToolbarComponent } from '../pages/components/toolbar/toolbar.component';
+import { StepperComponent } from '../pages/components/stepper/stepper.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent, StepperComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -65,7 +67,8 @@ import { ToolbarComponent } from '../pages/components/toolbar/toolbar.component'
     CommonModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatStepperModule
   ],
 
   providers: [

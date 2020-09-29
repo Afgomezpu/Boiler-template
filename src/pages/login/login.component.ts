@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
+import {StepperComponent} from '../components/stepper/stepper.component';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { ServicesProvider } from '../../providers/services';
 export class LoginComponent implements OnInit {
   showcontrasena: boolean = false;
   data: object = {};
-  constructor(public formBuilder :FormBuilder,public serviceProvider: ServicesProvider) {
+  constructor(public formBuilder :FormBuilder,public serviceProvider: ServicesProvider,public Stepper:MatDialog) {
     console.log(URL + WEBSERVICE.LOGIN);
   }
 
@@ -35,6 +37,9 @@ export class LoginComponent implements OnInit {
       this.registerForm.markAllAsTouched();
     
   }
+  fn_stepper(){
+    const dialogRef = this.Stepper.open(StepperComponent);
+   }
 
   checkcontrasenas(group: FormGroup) {
     // here we have the 'contrasenas' group

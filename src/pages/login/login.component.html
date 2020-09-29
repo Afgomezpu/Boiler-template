@@ -63,16 +63,14 @@
                     <div class="col-6">
                       <button
                       (click)="fn_submitFormLogin(registerForm)"
-                      mat-raised-button
-                      color="primary"
-                      class="my-5 w-100"
+                      mat-raised-button 
+                      class="btn-outline-azul-claro"
                        >
                       Ingresar
                     </button>
                     </div>
                     <div class="col-6 text-right">
-                      <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                      <i class="fa fa-window-close" aria-hidden="true"></i>
+                      <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">Forgot password?</button>        
                     </div>
                   </div>
                 </form>
