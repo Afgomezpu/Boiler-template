@@ -1,3 +1,4 @@
+
 <div class="app-body">
   <main class="main d-flex align-items-center">
     <div class="container">
@@ -6,31 +7,72 @@
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
-                <form>
+                <form [formGroup]="registerForm" (ngSubmit)="save($event)">
                   <h1>Login <i class="fa fa-user-circle" aria-hidden="true"></i></h1>
-
-                  <p class="text-muted">Sign In to your account</p>
+                 <p class="text-muted">Sign In to your account</p>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
+                    </div>                
+                      <input type="text" formControlName="Username"  placeholder="Username"> 
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                      </div> 
+                  </div>
+                  <div  class="texto-pequeno error" *ngIf="registerForm.get('Username').errors && registerForm.get('Username').touched">
+                    <p *ngIf="registerForm.get('Username').hasError('required')">
+                      Ingrese el nombre obligatorio
+                    </p>
                   </div>
                   <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-lock"></i></span>
-                    </div>
-                    <input type="password" class="form-control" placeholder="Password" autocomplete="current-password"
-                      required>
-                  </div>
+                    </div>    
+                      <input [type]="showcontrasena ? 'text' : 'Password'"
+                      formControlName="Password" placeholder="Password">
+                      <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i
+                            class="fa"
+                            [ngClass]="{
+                              'fa-eye-slash': !showcontrasena,
+                              'fa-eye': showcontrasena
+                            }"
+                            (click)=" fn_Showcontrasena()"
+                          ></i>
+                        </span>
+                      </div>
+                  </div> 
+                  <div  class="texto-pequeno error" *ngIf="registerForm.get('Password').errors && registerForm.get('Password').touched">
+                    <p *ngIf="registerForm.get('Password').hasError('required')">
+                      Ingrese la contraseña obligatorio
+                    </p>
+                  </div>          
+                  <span
+                class="texto-pequeno error pos_texto_error"
+                *ngIf="
+                registerForm.get('Password').errors?.pattern &&
+                registerForm.get('Password').invalid &&
+                (registerForm.get('Password').dirty ||
+                registerForm.get('Password').touched)"
+               >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
+              número, 1 carácter especial</span>
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-primary px-4">Login</button>
+                      <button
+                      (click)="fn_submitFormLogin(registerForm)"
+                      mat-raised-button
+                      color="primary"
+                      class="my-5 w-100"
+                       >
+                      Ingresar
+                    </button>
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">Forgot password?</button>
                       <i class="fa fa-window-close" aria-hidden="true"></i>
-
                     </div>
                   </div>
                 </form>

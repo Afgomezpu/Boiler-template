@@ -24,39 +24,63 @@
   font-family: blogger-sans;
   src: url(../assets/font/Blogger_Sans-Italic.otf) format("opentype");
 }
+
+@font-face {
+  font-family:lato-ligth;
+  src: url(../assets/font/Lato-Light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: myriad-pro;
+  src: url(../assets/font/myriad-pro-8.otf) format("opentype");
+}
 /*
 fuentes adicionales 
 */
 
-.font_blogger-sans{ 
+.font-lato-ligth{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'lato-ligth';
+}
+
+.font-myriad-pro{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'myriad-pro';
+}
+
+.font-blogger-sans{ 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'blogger-sans';
 }
 
-.font_roboto_light{ 
+.font-roboto-light{ 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'roboto-light';
 }
 
-.font_roboto_Condensed{ 
+.font-roboto-Condensed{ 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'roboto-Condensed';
 }
 
-.font_quicksand-regular{ 
+.font-quicksand-regular{ 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'quicksand-regular';
 }
 
-.font_arvo-italic{ 
+.font-arvo-italic{ 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -73,48 +97,66 @@ html {
   margin: 0px;
   padding: 0px;
 }
+
+.error {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+.error-color {
+  color: #dc3545 !important;
+}
+.pos_texto_error {
+  width: 100%;
+  position: absolute;
+  left: -50%;
+  bottom: -14px; /*0 */
+  transform: translate(50%, 0);
+  text-align: center;
+}
+
+
 /*
 Color botones 
 */
-.btn_azul_oscuro{
+.btn-azul-oscuro{
   background-color: $azul_oscuro !important;
   color:$blanco;
   }
 
-.btn_azul{
+.btn-azul{
   background-color: $azul !important;
   color:$blanco;
     } 
-.btn_azul_claro{
+.btn-azul-claro{
   background-color: $azul_claro !important;
   color:$blanco;
   }
   
-.btn_azul_agua_marina{
+.btn-azul-agua-marina{
   background-color: $azul_agua_marina !important;
   color:$blanco;
     }
 
-.btn_gris_primary{
+.btn-gris-primary{
   background-color: $gris_primary !important;
   color:$blanco;
       }
 
-.btn_gris_claro{
+.btn-gris-claro{
   background-color: $gris_claro !important;
   color:$blanco;
     }
-.btn_verde_primary{
+.btn-verde-primary{
   background-color: $verde_primary !important;
   color:$blanco;
      }
 
-.btn_verde_secondary{
+.btn-verde-secondary{
   background-color: $verde_secondary!important;
   color:$blanco;
       }     
 
-.btn_gris_secondary{
+.btn-gris-secondary{
  background-color: $gris_secondary !important;
  color:$blanco;
       }

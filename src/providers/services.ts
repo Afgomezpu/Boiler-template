@@ -19,6 +19,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 import { URL, WEBSERVICE } from '../config/webservices';
 import { throwError } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
 declare var EnjoyHint: any;
 @Injectable()
 export class ServicesProvider {
@@ -33,6 +34,17 @@ export class ServicesProvider {
   ) {
 
     
+  }
+
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
   }
 
   public handleError(error: HttpErrorResponse) {
