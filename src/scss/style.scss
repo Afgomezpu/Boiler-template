@@ -86,6 +86,7 @@ fuentes adicionales
   padding: 0;
   font-family: 'arvo-italic';
 }
+ 
 
 /*
 fin fuentes adicionales
@@ -114,6 +115,9 @@ html {
   text-align: center;
 }
 
+.background-error{
+  background-color: $gris_secondary;
+}
 
 /*
 Color botones 

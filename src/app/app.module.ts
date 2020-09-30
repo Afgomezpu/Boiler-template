@@ -45,12 +45,14 @@ import {MatInputModule} from '@angular/material/input';
 import { SidenavComponent } from '../pages/components/sidenav/sidenav.component';
 import { ToolbarComponent } from '../pages/components/toolbar/toolbar.component';
 import { StepperComponent } from '../pages/components/stepper/stepper.component';
+import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component';
+import { RestaurarContraComponent } from './restaurar-contra/restaurar-contra.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent, StepperComponent],
+  declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent, StepperComponent, PageNotFoundComponent, RestaurarContraComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
