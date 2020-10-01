@@ -1,4 +1,4 @@
-// If you want to override variables do it here
+// If you hant to override variables do it here
 @import "./variables.scss";
 
 @font-face {
@@ -209,54 +209,53 @@ Color botones
       }
 
       .btn-outline-azul-oscuro{
-        border-color:$azul_oscuro !important;
-        background-color:$blanco !important;
+        background-color: $blanco!important;
         color:$azul_oscuro !important;
-        }
-      
+        border: 1px solid $azul_oscuro !important;
+      }
       .btn-outline-azul{
-        border-color:$azul !important;
-        background-color:$blanco;
+        border: 1px solid $azul !important;
+        background-color:$blanco !important;
         color:$azul !important;
           } 
       .btn-outline-azul-claro{
-        border-color: $azul_claro !important;
-        background-color:$blanco;
+        border: 1px solid $azul_claro !important;
+        background-color:$blanco !important;
         color: $azul_claro !important;
         }
         
       .btn-outline-azul-agua-marina{
-        border-color: $azul_agua_marina !important;
-        background-color:$blanco;
+        border: 1px solid $azul_agua_marina !important;
+        background-color:$blanco !important;
         color: $azul_agua_marina !important;
           }
       
       .btn-outline-gris-primary{
-        border-color: $gris_primary !important;
-        background-color:$blanco;
+        border: 1px solid $gris_primary !important;
+        background-color:$blanco !important;
         color: $gris_primary !important;
             }
       
       .btn-outline-gris-claro{
-        border-color: $gris_claro !important;
-        background-color:$blanco;
+        border: 1px solid $gris_claro !important;
+        background-color:$blanco !important;
         color: $gris_claro !important;
           }
       .btn-outline-verde-primary{
-        border-color: $verde_primary !important;
-        background-color:$blanco;
+        border: 1px solid $verde_primary !important;
+        background-color:$blanco !important;
         color: $verde_primary !important;
           }
       
       .btn-outline-verde-secondary{
-        border-color: $verde_secondary!important;
-        background-color:$blanco;
+        border: 1px solid $verde_secondary!important;
+        background-color:$blanco !important;
         color: $verde_secondary!important;
             }     
       
       .btn-outline-gris-secondary{
-        border-color: $gris_secondary !important;
-        background-color:$blanco;
+        border: 1px solid $gris_secondary !important;
+        background-color:$blanco !important ;
          color: $gris_secondary !important;
             }    
       
@@ -405,10 +404,31 @@ h6 {
   height: 100vh;
 }
 
+.h-100vhvw {
+  height: 100vh;
+  width: 100% ;
+}
+
+.styleform{
+  max-width: 100% !important;
+  height:50em !important;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.flex-centerlink{
+  display: flex;
+  align-items: center;
+ 
+}
+
+.avatarlink{
+  width: 65px !important ;
+  height: 65px !important;
+  padding: 10px !important;
 }
 .bg_verde_primary{ 
   background:$verde-primary !important; 
@@ -550,6 +570,10 @@ h6 {
   width: 100%;
   height: auto;
 }
+.logo_circulo_restaurar {
+  width: 100%;
+  
+}
 .backdrop_preload {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999999999999999 !important;
@@ -627,3 +651,39 @@ h6 {
   text-align: center;
 }
 /* fin tour*/
+      
+.container_login {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  padding: 1.5rem;
+}
+.bg_login {
+  background-color: #5A5A5A;;
+  background-repeat: space;
+}
+.logo_circulo {
+  width: inherit !important;
+  padding: 4px !important;
+}
+button {
+  height: 49px;
+}
+.button_app {
+  background: linear-gradient(83deg, #494B9E 0%, #955CDF 69%, #B762FB 100%);
+  height: 55px;
+  font-size: 16px;
+  color: white;
+  border-radius: 28px;
+  display: block;
+  margin: 0 auto;
+}
+.fa-check-circle {
+  color: #3FC59D;
+  display: block;
+  text-align: center;
+}
+.texto_exito {
+  color: #5A5A5A;
+  text-align: center;
+}

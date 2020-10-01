@@ -1,1 +1,127 @@
-<p>restaurar-contra works!</p>
+<div class="h-100vh w-100 background-error" >
+    <form [formGroup]="formRestaurar" class="h-100 flex-center styleform" novalidate>
+      <div class="row no-gutters flex-center flex-column w-100">
+        <div
+          class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 px-4 container_login">
+          <ng-container *ngIf="mostrarForm">
+            
+              <div class=" flex-centerlink  m-auto">
+                <img class=" avatar avatarlink" src="../../assets/img/brand/ch_logo_pequeno.png" />   
+             <h3 class="texto_exito">Reset password</h3>
+          </div>
+        
+            <mat-form-field class="w-100 flex-center">
+              <mat-label>New Password</mat-label>
+              <input
+                matInput
+                [type]="showcontrasena ? 'text' : 'password'"
+                formControlName="contrasena"
+                class="example-right-align"
+              />
+              <i class="fas fa-lock mr-3" matPrefix></i>
+              <span
+                class="texto-pequeno error "
+                *ngIf="
+                  formRestaurar.controls.contrasena.invalid &&
+                  (formRestaurar.controls.contrasena.errors?.min ||
+                    formRestaurar.controls.contrasena.errors?.max) &&
+                  (formRestaurar.controls.contrasena.dirty ||
+                    formRestaurar.controls.contrasena.touched)
+                "
+                >La contraseña debe contener 6 digitos</span
+              >
+              <i
+              class="fa"
+              [ngClass]="{
+                'fa-eye-slash': !showcontrasena,
+                'fa-eye': showcontrasena
+              }"
+              (click)=" fn_Showcontrasena()"
+            ></i>
+              <span
+                class="texto-pequeno error "
+                *ngIf="
+                  formRestaurar.controls.contrasena.invalid &&
+                  formRestaurar.controls.contrasena.errors.required &&
+                  (formRestaurar.controls.contrasena.dirty ||
+                    formRestaurar.controls.contrasena.touched)
+                "
+                >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
+                número, 1 carácter especial</span
+              >
+              
+            </mat-form-field>
+            <mat-form-field class="w-100">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                matInput
+                [type]="showcontrasena ? 'text' : 'password'"
+                formControlName="repetir_contrasena"
+                class="example-right-align"
+              />
+              <i class="fas fa-lock mr-3" matPrefix></i>
+              <i
+              class="fa"
+              [ngClass]="{
+                'fa-eye-slash': !showcontrasena,
+                'fa-eye': showcontrasena
+              }"
+              (click)=" fn_Showcontrasena()"
+            ></i>
+              <span
+                class="texto-pequeno error pos_texto_error"
+                *ngIf="
+                  formRestaurar.controls.repetir_contrasena.invalid &&
+                  (formRestaurar.controls.repetir_contrasena.errors?.min ||
+                    formRestaurar.controls.repetir_contrasena.errors?.max) &&
+                  (formRestaurar.controls.repetir_contrasena.dirty ||
+                    formRestaurar.controls.repetir_contrasena.touched)
+                "
+                >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
+                número, 1 carácter especial</span
+              >
+              <span
+                class="texto-pequeno error "
+                *ngIf="
+                  formRestaurar.controls.repetir_contrasena.invalid &&
+                  formRestaurar.controls.repetir_contrasena.errors.required &&
+                  (formRestaurar.controls.repetir_contrasena.dirty ||
+                    formRestaurar.controls.repetir_contrasena.touched)
+                "
+                >La contraseña debe de ser igual a la de arriba y es obligatorio</span
+              >
+              <span
+                class="texto-pequeno error "
+                *ngIf="
+                  formRestaurar.errors?.notSame &&
+                  formRestaurar.controls.repetir_contrasena.valid &&
+                  formRestaurar.controls.contrasena.valid &&
+                  (formRestaurar.controls.repetir_contrasena.dirty ||
+                    formRestaurar.controls.repetir_contrasena.touched) &&
+                  (formRestaurar.controls.repetir_contrasena.dirty ||
+                    formRestaurar.controls.repetir_contrasena.touched)
+                "
+                >Las contraseñas no coinciden</span
+              >
+            </mat-form-field>
+            <button
+              (click)="fn_submitformRestaurar(formRestaurar)"
+              mat-raised-button
+              class="my-4 w-100  btn-outline-azul-claro"
+            >
+              <i class="fas fa-unlock mr-3" matPrefix></i>
+              CHANGE PASSWORD
+            </button>
+          </ng-container>
+          <a href="" class="flex-centerlink">Back to login</a>
+          <div class="animated bounceIn" *ngIf="!mostrarForm">
+            <i class="fas fa-check-circle fa-8x mt-5 animated bounceIn"></i>
+            <h2 class="my-4 texto_exito">
+              ¡Tu cuenta ha sido restaurada con éxito. Ahora puedes ingresar a la
+              app de Bee!
+            </h2>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

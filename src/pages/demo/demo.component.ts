@@ -46,7 +46,7 @@ export class DemoComponent implements OnInit {
   fn_generarTour(){
     let pasos = [
       {
-        selector: '#card',
+        selector: '.btn-azul',
         event: 'click',
         description:
           'La opción de búsqueda permitirá realizar una búsqueda y abrirá el panel del mismo',
@@ -55,7 +55,16 @@ export class DemoComponent implements OnInit {
         busqueda_realizada: true,
       },
       {
-        selector: '.titulo',
+        selector: '.btn-azul-claro',
+        event: 'click',
+        description:
+          'Otra alternativa para abrir el panel de búsqueda, es haciendo click desde esta pestaña lateral ',
+        showNext: true,
+        showPrev: true,
+        busqueda_realizada: true,
+      },
+      {
+        selector: '.btn-azul-agua-marina',
         event: 'click',
         description:
           'Otra alternativa para abrir el panel de búsqueda, es haciendo click desde esta pestaña lateral ',

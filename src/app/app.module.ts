@@ -12,7 +12,7 @@ import { ModalComponent } from '../pages/components/modal/modal.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ServicesProvider } from '../providers/services';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {GuardService} from '../guards/guard.service';
 /* importaciones material*/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularBootstrapToastsModule } from 'angular-bootstrap-toasts';
@@ -76,6 +76,7 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
   providers: [
     ServicesProvider,
     { provide: MatPaginatorIntl, useClass: MatPaginatorIntlEsp },
+    GuardService,
     /*{
       provide: DateAdapter,
       useClass: MomentDateAdapter,
