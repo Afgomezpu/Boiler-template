@@ -7,11 +7,11 @@
             
               <div class=" flex-centerlink  m-auto">
                 <img class=" avatar avatarlink" src="../../assets/img/brand/ch_logo_pequeno.png" />   
-             <h3 class="texto_exito">Reset password</h3>
+             <h3 class="texto_exito">Restablecer Contraseña</h3>
           </div>
         
             <mat-form-field class="w-100 flex-center">
-              <mat-label>New Password</mat-label>
+              <mat-label>Nueva Contraseña</mat-label>
               <input
                 matInput
                 [type]="showcontrasena ? 'text' : 'password'"
@@ -52,7 +52,7 @@
               
             </mat-form-field>
             <mat-form-field class="w-100">
-              <mat-label>Confirm Password</mat-label>
+              <mat-label>Confirmar Contraseña</mat-label>
               <input
                 matInput
                 [type]="showcontrasena ? 'text' : 'password'"
@@ -110,15 +110,14 @@
               class="my-4 w-100  btn-outline-azul-claro"
             >
               <i class="fas fa-unlock mr-3" matPrefix></i>
-              CHANGE PASSWORD
+              CAMBIAR CONTRASEÑA
             </button>
           </ng-container>
-          <a href="" class="flex-centerlink">Back to login</a>
+          <a href="" class="flex-centerlink">Volver</a>
           <div class="animated bounceIn" *ngIf="!mostrarForm">
             <i class="fas fa-check-circle fa-8x mt-5 animated bounceIn"></i>
             <h2 class="my-4 texto_exito">
-              ¡Tu cuenta ha sido restaurada con éxito. Ahora puedes ingresar a la
-              app de Bee!
+              ¡Tu cuenta ha sido restaurada con éxito.
             </h2>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
 import {SwiperComponent} from '../components/swiper/swiper.component'
+import * as c3 from "c3";
 import {
   MatDialog,
   MatDialogRef,
@@ -22,8 +23,6 @@ declare var EnjoyHint: any;
 
 export class DemoComponent implements OnInit {
   
-
-  
   data: object = {};
   constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,) {
     
@@ -36,12 +35,12 @@ export class DemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.fn_ConsumirServicioWeb();
+    this.graficarCirculo();
+    this.graficarBarra();
     setTimeout(() => {
       this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
     }, 5000);
   }
-
-
 
   fn_generarTour(){
     let pasos = [
@@ -113,5 +112,52 @@ export class DemoComponent implements OnInit {
       });
   }
 
-  
+graficarCirculo(){
+c3.generate({
+  bindto:"#graficaCircular",
+     data: {
+        // iris data from R
+        columns: [
+            ['data1', 30],
+            ['data2', 120],
+        ],
+        colors: {
+          data1: '#00782b',
+          data2: '#9cc129',
+      },
+        type : 'pie',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    }
+    
+});
+}
+
+graficarBarra(){
+  c3.generate({
+    bindto:"#graficaBarras",
+    data: {
+        columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 130, 100, 140, 200, 150, 50]
+        ],
+        colors: {
+          data1: '#00782b',
+          data2: '#9cc129',
+      },
+
+        
+        
+        type: 'bar'
+    },
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+ }
 }

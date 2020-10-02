@@ -26,7 +26,10 @@
               "src/scss/style.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/animate.css/animate.min.css",
-              "node_modules/swiper/css/swiper.min.css"
+              "node_modules/swiper/css/swiper.min.css",
+              "node_modules/c3/c3.min.css",
+              "node_modules/c3/c3.css"
+              
             ],
             "scripts": []
           },

@@ -27,6 +27,8 @@
     "angular-bootstrap-toasts": "1.1.1",
     "animate.css": "4.1.1",
     "bootstrap": "^4.5.0",
+    "c3": "^0.7.20",
+    "d3": "^6.2.0",
     "ngx-swiper-wrapper": "^9.0.1",
     "ngx-toastr": "^13.0.0",
     "roboto-fontface": "^0.10.0",
