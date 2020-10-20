@@ -1,18 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { LoginComponent, DemoComponent } from '../pages/index.pages';
-import {SidenavComponent} from '../pages/components/sidenav/sidenav.component';
-import {PageNotFoundComponent} from '../pages/page-not-found/page-not-found.component';
-import {RestaurarContraComponent} from '../pages/restaurar-contra/restaurar-contra.component';
 import {GuardService} from '../guards/guard.service';
+import {LoginModule} from '../pages/login/login.module';
+import{DemoModule} from '../pages/demo/demo.module';
+import {SidenavModule} from '../pages/components/sidenav/sidenav.module';
+import {PageNotFoundModule} from '../pages/page-not-found/page-not-found.module';
+import{RestaurarContraModule} from '../pages/restaurar-contra/restaurar-contra.module'
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'demo', component: DemoComponent,canActivate:[GuardService] },
-  { path: '', component:SidenavComponent },
-  { path: 'Pagenotfound', component:PageNotFoundComponent }, 
-  { path: 'ResturarContrasena/:idtoken', component:RestaurarContraComponent },
+  { path: 'login', 
+  loadChildren:'../pages/login/login.module#LoginModule'
+  },
+
+  { path: 'demo',
+   loadChildren:'../pages/demo/demo.module#DemoModule',
+   canActivate:[GuardService]
+   },
+
+  { path: '', 
+  loadChildren:'../pages/components/sidenav/sidenav.module#SidenavModule'
+  },
+  
+  { path: 'Pagenotfound', 
+  loadChildren:'../pages/page-not-found/page-not-found.module#PageNotFoundModule'
+  }, 
+
+  { path: 'ResturarContrasena/:idtoken', 
+  loadChildren:'../pages/restaurar-contra/restaurar-contra.module#RestaurarContraModule' },
+  
   {
     path: '**',
     redirectTo: 'Pagenotfound',
