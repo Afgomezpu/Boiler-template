@@ -1,6 +1,18 @@
 // If you hant to override variables do it here
 @import "./variables.scss";
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: roboto-Condensed;
   src: url(../assets/font/Roboto-Condensed.ttf) format("opentype");
@@ -26,7 +38,7 @@
 }
 
 @font-face {
-  font-family:lato-ligth;
+  font-family: lato-ligth;
   src: url(../assets/font/Lato-Light.ttf) format("opentype");
 }
 
@@ -38,66 +50,58 @@
 fuentes adicionales 
 */
 
-.font-lato-ligth{ 
+.font-lato-ligth {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'lato-ligth';
+  font-family: "lato-ligth";
 }
 
-.font-myriad-pro{ 
+.font-myriad-pro {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'myriad-pro';
+  font-family: "myriad-pro";
 }
 
-.font-blogger-sans{ 
+.font-blogger-sans {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'blogger-sans';
+  font-family: "blogger-sans";
 }
 
-.font-roboto-light{ 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'roboto-light';
-}
-
-.font-roboto-Condensed{ 
+.font-roboto-light {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'roboto-Condensed';
+  font-family: "roboto-light";
 }
 
-.font-quicksand-regular{ 
+.font-roboto-Condensed {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'quicksand-regular';
+  font-family: "roboto-Condensed";
 }
 
-.font-arvo-italic{ 
+.font-quicksand-regular {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'arvo-italic';
+  font-family: "quicksand-regular";
 }
- 
+
+.font-arvo-italic {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "arvo-italic";
+}
 
 /*
 fin fuentes adicionales
 */
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
 
 .error {
   border-color: #dc3545 !important;
@@ -115,161 +119,158 @@ html {
   text-align: center;
 }
 
-.background-error{
+.background-error {
   background-color: $gris_secondary;
 }
 
 /*
 Color botones 
 */
-.btn-azul-oscuro{
+.btn-azul-oscuro {
   background-color: $azul_oscuro !important;
-  color:$blanco;
-  }
+  color: $blanco;
+}
 
-.btn-azul{
+.btn-azul {
   background-color: $azul !important;
-  color:$blanco;
-    } 
-.btn-azul-claro{
+  color: $blanco;
+}
+.btn-azul-claro {
   background-color: $azul_claro !important;
-  color:$blanco;
-  }
-  
-.btn-azul-agua-marina{
+  color: $blanco;
+}
+
+.btn-azul-agua-marina {
   background-color: $azul_agua_marina !important;
-  color:$blanco;
-    }
+  color: $blanco;
+}
 
-.btn-gris-primary{
+.btn-gris-primary {
   background-color: $gris_primary !important;
-  color:$blanco;
-      }
+  color: $blanco;
+}
 
-.btn-gris-claro{
+.btn-gris-claro {
   background-color: $gris_claro !important;
-  color:$blanco;
-    }
-.btn-verde-primary{
+  color: $blanco;
+}
+.btn-verde-primary {
   background-color: $verde_primary !important;
-  color:$blanco;
-     }
+  color: $blanco;
+}
 
-.btn-verde-secondary{
-  background-color: $verde_secondary!important;
-  color:$blanco;
-      }     
+.btn-verde-secondary {
+  background-color: $verde_secondary !important;
+  color: $blanco;
+}
 
-.btn-gris-secondary{
- background-color: $gris_secondary !important;
- color:$blanco;
-      }
+.btn-gris-secondary {
+  background-color: $gris_secondary !important;
+  color: $blanco;
+}
 
-      .btn-azul-oscuro{
+.btn-azul-oscuro {
   background-color: $azul_oscuro !important;
-  color:$blanco;
-  }
+  color: $blanco;
+}
 
-.btn-azul{
+.btn-azul {
   background-color: $azul !important;
-  color:$blanco;
-    } 
-.btn-azul-claro{
+  color: $blanco;
+}
+.btn-azul-claro {
   background-color: $azul_claro !important;
-  color:$blanco;
-  }
-  
-.btn-azul-agua-marina{
+  color: $blanco;
+}
+
+.btn-azul-agua-marina {
   background-color: $azul_agua_marina !important;
-  color:$blanco;
-    }
+  color: $blanco;
+}
 
-.btn-gris-primary{
+.btn-gris-primary {
   background-color: $gris_primary !important;
-  color:$blanco;
-      }
+  color: $blanco;
+}
 
-.btn-gris-claro{
+.btn-gris-claro {
   background-color: $gris_claro !important;
-  color:$blanco;
-    }
-.btn-verde-primary{
+  color: $blanco;
+}
+.btn-verde-primary {
   background-color: $verde_primary !important;
-  color:$blanco;
-     }
+  color: $blanco;
+}
 
-.btn-verde-secondary{
-  background-color: $verde_secondary!important;
-  color:$blanco;
-      }     
+.btn-verde-secondary {
+  background-color: $verde_secondary !important;
+  color: $blanco;
+}
 
-.btn-gris-secondary{
- background-color: $gris_secondary !important;
- color:$blanco;
-      }
+.btn-gris-secondary {
+  background-color: $gris_secondary !important;
+  color: $blanco;
+}
 
-      .btn-outline-azul-oscuro{
-        background-color: $blanco!important;
-        color:$azul_oscuro !important;
-        border: 1px solid $azul_oscuro !important;
-      }
-      .btn-outline-azul{
-        border: 1px solid $azul !important;
-        background-color:$blanco !important;
-        color:$azul !important;
-          } 
-      .btn-outline-azul-claro{
-        border: 1px solid $azul_claro !important;
-        background-color:$blanco !important;
-        color: $azul_claro !important;
-        }
-        
-      .btn-outline-azul-agua-marina{
-        border: 1px solid $azul_agua_marina !important;
-        background-color:$blanco !important;
-        color: $azul_agua_marina !important;
-          }
-      
-      .btn-outline-gris-primary{
-        border: 1px solid $gris_primary !important;
-        background-color:$blanco !important;
-        color: $gris_primary !important;
-            }
-      
-      .btn-outline-gris-claro{
-        border: 1px solid $gris_claro !important;
-        background-color:$blanco !important;
-        color: $gris_claro !important;
-          }
-      .btn-outline-verde-primary{
-        border: 1px solid $verde_primary !important;
-        background-color:$blanco !important;
-        color: $verde_primary !important;
-          }
-      
-      .btn-outline-verde-secondary{
-        border: 1px solid $verde_secondary!important;
-        background-color:$blanco !important;
-        color: $verde_secondary!important;
-            }     
-      
-      .btn-outline-gris-secondary{
-        border: 1px solid $gris_secondary !important;
-        background-color:$blanco !important ;
-         color: $gris_secondary !important;
-            }    
-      
-  /*
+.btn-outline-azul-oscuro {
+  background-color: $blanco !important;
+  color: $azul_oscuro !important;
+  border: 1px solid $azul_oscuro !important;
+}
+.btn-outline-azul {
+  border: 1px solid $azul !important;
+  background-color: $blanco !important;
+  color: $azul !important;
+}
+.btn-outline-azul-claro {
+  border: 1px solid $azul_claro !important;
+  background-color: $blanco !important;
+  color: $azul_claro !important;
+}
+
+.btn-outline-azul-agua-marina {
+  border: 1px solid $azul_agua_marina !important;
+  background-color: $blanco !important;
+  color: $azul_agua_marina !important;
+}
+
+.btn-outline-gris-primary {
+  border: 1px solid $gris_primary !important;
+  background-color: $blanco !important;
+  color: $gris_primary !important;
+}
+
+.btn-outline-gris-claro {
+  border: 1px solid $gris_claro !important;
+  background-color: $blanco !important;
+  color: $gris_claro !important;
+}
+.btn-outline-verde-primary {
+  border: 1px solid $verde_primary !important;
+  background-color: $blanco !important;
+  color: $verde_primary !important;
+}
+
+.btn-outline-verde-secondary {
+  border: 1px solid $verde_secondary !important;
+  background-color: $blanco !important;
+  color: $verde_secondary !important;
+}
+
+.btn-outline-gris-secondary {
+  border: 1px solid $gris_secondary !important;
+  background-color: $blanco !important ;
+  color: $gris_secondary !important;
+}
+
+/*
 cierre estilos de colores botones
 */
-
-
 
 /* swiper*/
 .swiper-pagination-bullet-active {
   background-color: $verde_primary !important;
 }
-
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -355,7 +356,6 @@ cierre estilos de colores botones
   background: white;
 }
 
-
 // Import styles
 
 /* fixed styles md boostrap*/
@@ -395,6 +395,52 @@ h6 {
 .sombra {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+.mascara {
+  background: url("../assets//img/background/mascara_seccion.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a2a2a2;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; */
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border1 {
+  border: 1px solid red;
+}
+.border2 {
+  border: 1px solid blue;
+}
+.border3 {
+  border: 1px solid green;
+}
+.border4 {
+  border: 1px solid pink;
+}
 
 .pointer {
   cursor: pointer;
@@ -406,104 +452,97 @@ h6 {
 
 .h-100vhvw {
   height: 100vh;
-  width: 100% ;
+  width: 100%;
 }
 
-.Grafica{
-width: 500vh !important;
-height: 500vh !important;
-
+.Grafica {
+  width: 100% !important;
+  height: 100% !important;
 }
-.styleform{
+.styleform {
   max-width: 100% !important;
-  height:50em !important;
+  height: 50em !important;
 }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-centerlink{
+.flex-centerlink {
   display: flex;
   align-items: center;
- 
 }
 
-.avatarlink{
+.avatarlink {
   width: 65px !important ;
   height: 65px !important;
   padding: 10px !important;
 }
-.bg_verde_primary{ 
-  background:$verde-primary !important; 
+.bg_verde_primary {
+  background: $verde-primary !important;
 }
 
-.text_verde_primary{ 
-  color: $verde-primary  !important
+.text_verde_primary {
+  color: $verde-primary !important;
 }
-.bg_azul_oscuro{ 
-  background:$azul_oscuro !important; 
-}
-
-.text_azul_oscuro{ 
-  color: $azul_oscuro  !important
-}
-.bg_azul{ 
-  background:$azul !important; 
+.bg_azul_oscuro {
+  background: $azul_oscuro !important;
 }
 
-.text_azul{ 
-  color: $azul  !important
+.text_azul_oscuro {
+  color: $azul_oscuro !important;
 }
-.bg_azul_claro{ 
-  background:$azul_claro !important; 
-}
-
-.text_azul_claro{ 
-  color: $azul_claro  !important
-}
-.bg_azul_agua_marina{ 
-  background:$azul_agua_marina !important; 
+.bg_azul {
+  background: $azul !important;
 }
 
-.text_azul_agua_marina{ 
-  color: $azul_agua_marina !important
+.text_azul {
+  color: $azul !important;
 }
-.bg_gris_primary{ 
-  background:$gris_primary !important; 
-}
-
-.text_gris_primary{ 
-  color: $gris_primary  !important
-}
-.bg_gris_claro{ 
-  background:$gris_claro !important; 
+.bg_azul_claro {
+  background: $azul_claro !important;
 }
 
-.text_gris_claro{ 
-  color: $gris_claro !important
+.text_azul_claro {
+  color: $azul_claro !important;
 }
-.bg_verde_secondary{ 
-  background:$verde_secondary!important; 
-}
-
-.text_verde_secondary{ 
-  color: $verde_secondary  !important
-}
-.bg_gris_secondary{ 
-  background:$gris_secondary !important; 
+.bg_azul_agua_marina {
+  background: $azul_agua_marina !important;
 }
 
-.text_gris_secondary{ 
-  color: $gris_secondary  !important
+.text_azul_agua_marina {
+  color: $azul_agua_marina !important;
 }
-.bg_text_primary{ 
-  background:$text_primary !important; 
+.bg_gris_primary {
+  background: $gris_primary !important;
 }
 
-.text_text_primary{ 
-  color: $text_primary  !important
+.text_gris_primary {
+  color: $gris_primary !important;
+}
+.bg_gris_claro {
+  background: $gris_claro !important;
+}
+
+.text_gris_claro {
+  color: $gris_claro !important;
+}
+.bg_verde_secondary {
+  background: $verde_secondary !important;
+}
+
+.text_verde_secondary {
+  color: $verde_secondary !important;
+}
+.bg_gris_secondary {
+  background: $gris_secondary !important;
+}
+
+.text_gris_secondary {
+  color: $gris_secondary !important;
+}
+.bg_text_primary {
+  background: $text_primary !important;
+}
+
+.text_text_primary {
+  color: $text_primary !important;
 }
 
 /* fin clases genericas */
@@ -523,6 +562,7 @@ height: 500vh !important;
 .mat-dialog-container {
   padding: 0px !important;
   border-radius: 10px !important;
+  overflow: hidden !important; /*TODO si no permite hacer scroll el dialogo, quitar */
 }
 
 .modal_success_bg {
@@ -577,7 +617,6 @@ height: 500vh !important;
 }
 .logo_circulo_restaurar {
   width: 100%;
-  
 }
 .backdrop_preload {
   background-color: rgba(0, 0, 0, 0.5);
@@ -656,7 +695,7 @@ height: 500vh !important;
   text-align: center;
 }
 /* fin tour*/
-      
+
 .container_login {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: rgba(255, 255, 255, 0.8);
@@ -664,7 +703,7 @@ height: 500vh !important;
   padding: 1.5rem;
 }
 .bg_login {
-  background-color: #5A5A5A;;
+  background-color: #5a5a5a;
   background-repeat: space;
 }
 .logo_circulo {
@@ -675,7 +714,7 @@ button {
   height: 49px;
 }
 .button_app {
-  background: linear-gradient(83deg, #494B9E 0%, #955CDF 69%, #B762FB 100%);
+  background: linear-gradient(83deg, #494b9e 0%, #955cdf 69%, #b762fb 100%);
   height: 55px;
   font-size: 16px;
   color: white;
@@ -684,12 +723,11 @@ button {
   margin: 0 auto;
 }
 .fa-check-circle {
-  color: #3FC59D;
+  color: #3fc59d;
   display: block;
   text-align: center;
 }
 .texto_exito {
-  color: #5A5A5A;
+  color: #5a5a5a;
   text-align: center;
 }
-

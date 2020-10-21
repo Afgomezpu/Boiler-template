@@ -1,1 +1,83 @@
 @import "../../scss/variables";
+
+.fondo_login {
+  background: url("../../assets//img/background/prueba.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*.mascara_azul {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(39, 73, 117, 0.7);
+  z-index: 2;
+}*/
+
+.contenedor_login {
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(39, 73, 117, 0.7);
+  height: min(50vh, 500px);
+  padding: 10px;
+}
+
+.logo_circulo_icon {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  transform: translate(0px, -50%);
+}
+
+.mascara_azul {
+  height: 100%;
+  width: 100%;
+  /*background-color: rgba(39, 73, 117, 0.7);*/
+  z-index: 2;
+  background: linear-gradient(158deg, #1b62bfa8, #57c6f273);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimacionFondo 60s linear infinite;
+  -moz-animation: AnimacionFondo 60s linear infinite;
+  animation: AnimacionFondo 60s linear infinite;
+}
+
+@-webkit-keyframes AnimacionFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimacionFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimacionFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
