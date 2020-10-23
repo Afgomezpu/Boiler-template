@@ -7,10 +7,12 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 
+
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.css']
+  styleUrls: ['./stepper.component.css'],
+
 })
 export class StepperComponent implements OnInit {
   closeResult = '';
@@ -18,8 +20,9 @@ export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder,private modalService: NgbModal,public dialogRef: MatDialogRef<StepperComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+  constructor(private _formBuilder: FormBuilder,private modalService: NgbModal,
+    public dialogRef: MatDialogRef<StepperComponent>,
+     @Inject(MAT_DIALOG_DATA) public data: any
    ) { }
 
   ngOnInit(): void {
@@ -28,28 +31,12 @@ export class StepperComponent implements OnInit {
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
-    });
+    }); 
+    
   }
   onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+    
+     this.dialogRef.close();
   }
 
 }

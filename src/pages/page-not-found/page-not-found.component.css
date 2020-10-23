@@ -1,0 +1,17 @@
+.container-flex{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
+.contenedor-notfound{
+    position: relative;
+    border-radius: 5px;
+    background-color: rgba(70, 117, 39, 0.774);
+    height: min(50vh, 500px);
+    padding: 10px;
+}
+

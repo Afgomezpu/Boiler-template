@@ -1,100 +1,89 @@
-<!-- 
-<div class="app-body">
-  <main class="main d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-          <div class="card-group">
-            <div class="card p-4">
-              <div class="card-body">
-                <form [formGroup]="registerForm" (ngSubmit)="save($event)">
-                  <h1>Login <i class="fa fa-user-circle" aria-hidden="true"></i></h1>
-                 <p class="text-muted">Sign In to your account</p>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="icon-user"></i></span>
-                    </div>                
-                      <input type="text" formControlName="Username"  placeholder="Username"> 
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </span>
-                      </div> 
-                  </div>
-                  <div  class="texto-pequeno error" *ngIf="registerForm.get('Username').errors && registerForm.get('Username').touched">
-                    <p *ngIf="registerForm.get('Username').hasError('required')">
-                      Ingrese el nombre obligatorio
-                    </p>
-                  </div>
-                  <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="icon-lock"></i></span>
-                    </div>    
-                      <input [type]="showcontrasena ? 'text' : 'Password'"
-                      formControlName="Password" placeholder="Password">
-                      <div class="input-group-append">
-                        <span class="input-group-text">
-                          <i
-                            class="fa"
-                            [ngClass]="{
-                              'fa-eye-slash': !showcontrasena,
-                              'fa-eye': showcontrasena
-                            }"
-                            (click)=" fn_Showcontrasena()"
-                          ></i>
-                        </span>
-                      </div>
-                  </div> 
-                  <div  class="texto-pequeno error" *ngIf="registerForm.get('Password').errors && registerForm.get('Password').touched">
-                    <p *ngIf="registerForm.get('Password').hasError('required')">
-                      Ingrese la contraseña obligatorio
-                    </p>
-                  </div>          
-                  <span
-                class="texto-pequeno error pos_texto_error"
-                *ngIf="
-                registerForm.get('Password').errors?.pattern &&
-                registerForm.get('Password').invalid &&
-                (registerForm.get('Password').dirty ||
-                registerForm.get('Password').touched)"
-               >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
-              número, 1 carácter especial</span>
-                  <div class="row">
-                    <div class="col-6">
-                      <button
-                      (click)="fn_submitFormLogin(registerForm)"
-                      mat-raised-button 
-                      class="btn-outline-azul-claro"
-                       >
-                      Ingresar
-                    </button>
-                    </div>
-                    <div class="col-6 text-right">
-                      <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">Forgot password?</button>        
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div> -->
+
 <div class="fondo_login h-100">
   <div class="mascara_azul">
     <div class="row h-100 no-gutters flex-center">
-      <div class="col-11 col-sm-9 col-md-6 col-lg-4 col-xl-4">
-
-        <div class="animate__animated animate__fadeIn  contenedor_login sombra  flex-center">
+      <div class="col-12  col-sm-8 col-md-6 col-lg-6 col-xl-5  px-4 justificar">
+        <div class="animate__animated animate__fadeIn  space contenedor_login sombra  flex-center">
           <div class="logo_circulo_icon sombra animate__animated animate__zoomIn ">
-            <img src="../../assets//img/brand/logo-RevloG.png" class="w-100">
+            <img src="../../assets//img/brand/ch_logo_pequeno.png" class="w-100">
+            </div>
+            <div class="h-100vh w-100 ">
+              <form [formGroup]="formLogin" class="h-100 flex-center " novalidat>
+              <div class="row no-gutters flex-center flex-column w-100 ">
+                <div
+                  class="col-12  col-sm-8  col-md-8 col-lg-8 col-xl-8  px-4 justificar "
+                >
+        <mat-form-field class="w-100">
+          <mat-label>Correo</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            class="example-right-align"
+          />
+          <i class="fas fa-envelope mr-3" matPrefix></i>
+          <span
+            class="texto-pequeno error pos_texto_error"
+            *ngIf="
+              formLogin.controls.email.invalid &&
+              (formLogin.controls.email.dirty ||
+                formLogin.controls.email.touched)
+            "
+            >Este campo es requerido</span
+          >
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Contrasena</mat-label>
+          <input
+            matInput
+            [type]="showcontrasena ? 'text' : 'password'"
+            formControlName="contrasena"
+            class="example-right-align"
+          />
+          <i class="fas fa-lock mr-3" matPrefix></i>
+
+          <span
+            class="texto-pequeno error pos_texto_error"
+            *ngIf="
+              formLogin.controls.contrasena.errors?.required &&
+              formLogin.controls.contrasena.invalid &&
+              (formLogin.controls.contrasena.dirty ||
+                formLogin.controls.contrasena.touched)
+            "
+            >Este campo es requerido</span
+          >
+
+          <span
+            class="texto-pequeno error pos_texto_error"
+            *ngIf="
+              formLogin.controls.contrasena.errors?.pattern &&
+              formLogin.controls.contrasena.invalid &&
+              (formLogin.controls.contrasena.dirty ||
+                formLogin.controls.contrasena.touched)
+            "
+            >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
+            número, 1 carácter especial</span
+          >
+        </mat-form-field>
+
+        <button
+          (click)="fn_submitFormLogin(formLogin)"
+          mat-raised-button
+          color="primary"
+          class="btn-outline-verde-secondary tamanobutton"
+        >
+          Ingresar
+        </button>
+        <div class="flex-center">
+          <div class="">
+            <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">olvide mi contraseña?</button>
           </div>
-          <div>hola soy un login</div>
         </div>
       </div>
     </div>
+  </form>
+</div>            
+      </div>
+    </div>
   </div>
-
 </div>

@@ -6,12 +6,10 @@ import{DemoModule} from '../pages/demo/demo.module';
 import {SidenavModule} from '../pages/components/sidenav/sidenav.module';
 import {PageNotFoundModule} from '../pages/page-not-found/page-not-found.module';
 import{RestaurarContraModule} from '../pages/restaurar-contra/restaurar-contra.module'
-
 const routes: Routes = [
   { path: 'login', 
   loadChildren:'../pages/login/login.module#LoginModule'
   },
-
   { path: 'demo',
    loadChildren:'../pages/demo/demo.module#DemoModule',
    canActivate:[GuardService]

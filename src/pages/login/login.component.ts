@@ -12,51 +12,35 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  showcontrasena: boolean = false;
-  data: object = {};
-  constructor(public formBuilder :FormBuilder,public serviceProvider: ServicesProvider,public Stepper:MatDialog) {
-    console.log(URL + WEBSERVICE.LOGIN);
-  }
 
-   registerForm=this.formBuilder.group({
-     Username:['',  [Validators.required]],
-      Password:[
+  data: object = {};
+  formLogin: FormGroup;
+  showcontrasena: boolean = false;
+  constructor(
+    public fb: FormBuilder,
+    private ServicesProvider: ServicesProvider,
+    public Stepper:MatDialog,
+    public serviceProvider: ServicesProvider
+  ) {
+    this.formLogin = fb.group({
+      email: ["", [Validators.required, Validators.email]],
+      contrasena: [
         "",
         [
           Validators.required,
           Validators.pattern(
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-          )
-        ]
-      ]
-   });
-
-   save(event: Event) {
-    event.preventDefault();
-    if (!this.registerForm.valid) 
-      this.registerForm.markAllAsTouched();
-    
-  }
-  fn_stepper(){
-    const dialogRef = this.Stepper.open(StepperComponent);
-   }
-
-  checkcontrasenas(group: FormGroup) {
-    // here we have the 'contrasenas' group
-    let pass = group.get("contrasena").value;
-    let confirmPass = group.get("repetir_contrasena").value;
-    return pass === confirmPass ? null : { notSame: true };
+          ),
+        ],
+      ],
+    });
   }
 
-  validateAllFormFields(formGroup: FormGroup) {
-    this.serviceProvider.validateAllFormFields(formGroup);
-  }
-  
   fn_submitFormLogin(formGroup: FormGroup) {
     if (formGroup.valid) {
       let oLogin: any = {
-        correo: this.registerForm.get("Username").value,
-        contrasena: this.registerForm.get("Password").value
+        correo: this.formLogin.get("email").value,
+        contrasena: this.formLogin.get("contrasena").value
       };
       this.serviceProvider.preloaderOn();
       this.serviceProvider
@@ -78,7 +62,22 @@ export class LoginComponent implements OnInit {
       this.validateAllFormFields(formGroup);
     }
   }
-  
+
+  checkcontrasenas(group: FormGroup) {
+    // here we have the 'contrasenas' group
+    let pass = group.get("contrasena").value;
+    let confirmPass = group.get("repetir_contrasena").value;
+    return pass === confirmPass ? null : { notSame: true };
+  }
+
+  validateAllFormFields(formGroup: FormGroup) {
+    this.ServicesProvider.validateAllFormFields(formGroup);
+  }
+ 
+
+  fn_stepper(){
+      const dialogRef = this.Stepper.open(StepperComponent);
+     }
 
   fn_Showcontrasena() {
     this.showcontrasena = !this.showcontrasena;

@@ -1,7 +1,7 @@
-<ng-template #content let-modal>
+
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Olvido Contraseña</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <button type="button" class="close" aria-label="Close" (click)="onNoClick()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -15,7 +15,7 @@
           <input matInput placeholder=" " formControlName="firstCtrl" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -29,8 +29,8 @@
                  required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious>Atras</button>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -38,18 +38,17 @@
       <ng-template matStepLabel>Salir</ng-template>
       <p>Recuperacion en proceso</p>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="stepper.reset()">Reiniciar</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="onNoClick()">Guardar</button>
       </div>
-</ng-template>
-<button class="btn-outline-azul" (click)="open(content)">Desea recuperarla</button>
-<button class="btn-outline-verde-primary" (click)="onNoClick()">cancelar</button>
+
+
 
 
   

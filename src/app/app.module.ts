@@ -39,7 +39,7 @@ import {MatListModule} from '@angular/material/list'
 
 import {MatButtonModule} from '@angular/material/button';
 
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {MatInputModule} from '@angular/material/input';
 import { SidenavComponent } from '../pages/components/sidenav/sidenav.component';
@@ -74,9 +74,10 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
   ],
 
   providers: [
-    ServicesProvider,
+    ServicesProvider ,
     { provide: MatPaginatorIntl, useClass: MatPaginatorIntlEsp },
-    GuardService,
+    
+    GuardService, 
     /*{
       provide: DateAdapter,
       useClass: MomentDateAdapter,
