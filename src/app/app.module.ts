@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,7 +54,8 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, DemoComponent, ModalComponent, SwiperComponent, SidenavComponent, ToolbarComponent, StepperComponent, PageNotFoundComponent, RestaurarContraComponent],
-  imports: [
+  
+  imports: [MatDividerModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
