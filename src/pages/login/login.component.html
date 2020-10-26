@@ -1,9 +1,21 @@
-
 <div class="fondo_login h-100">
-  <div class="mascara_azul">
-    <div class="row h-100 no-gutters flex-center">
-      <div class="col-12  col-sm-8 col-md-6 col-lg-6 col-xl-5  px-4 justificar">
-        <div class="animate__animated animate__fadeIn  space contenedor_login sombra  flex-center">
+  <div class="mascara_azul flex-center wave ">
+    <div class="row contenedor_login_ambos  flex-center">
+    <div class="col-4  flex-center  tamano ">
+      <div class="row h-100 no-gutters flex-center col-6 tamano ">
+        <div class="col-12  col-sm-12 col-md-12 col-lg-12 col-xl-12  px-4 justificar">
+          <div class="animate__animated animate__fadeIn  space logo_circulo_ico   flex-center">
+            <div class="  animate__animated animate__zoomIn ">
+              <img src="../../assets//img/brand/logo.png" class="w-100">
+              </div>         
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-8  flex-center ">
+    <div class="row h-100 no-gutters flex-center col-12">
+      <div class="col-12  col-sm-12 col-md-12 col-lg-12 col-xl-12  px-4  justificar">
+        <div class="animate__animated animate__fadeIn  space contenedor_login  flex-center">
           <div class="logo_circulo_icon sombra animate__animated animate__zoomIn ">
             <img src="../../assets//img/brand/ch_logo_pequeno.png" class="w-100">
             </div>
@@ -13,7 +25,10 @@
                 <div
                   class="col-12  col-sm-8  col-md-8 col-lg-8 col-xl-8  px-4 justificar "
                 >
-        <mat-form-field class="w-100">
+                <!-- <div class="flex-center col-12  col-sm-8  col-md-8 col-lg-8 col-xl-8 ">
+                <h2 >Bienvenido</h2>
+              </div> -->
+          <mat-form-field class="w-100">
           <mat-label>Correo</mat-label>
           <input
             matInput
@@ -65,6 +80,11 @@
             número, 1 carácter especial</span
           >
         </mat-form-field>
+        <div class="flex-center">
+          <div class="">
+            <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">olvide mi contraseña?</button>
+          </div>
+        </div>
 
         <button
           (click)="fn_submitFormLogin(formLogin)"
@@ -74,11 +94,7 @@
         >
           Ingresar
         </button>
-        <div class="flex-center">
-          <div class="">
-            <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">olvide mi contraseña?</button>
-          </div>
-        </div>
+       
       </div>
     </div>
   </form>
@@ -86,4 +102,7 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+</div>
 </div>

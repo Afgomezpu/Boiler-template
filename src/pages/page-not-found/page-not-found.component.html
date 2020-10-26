@@ -1,9 +1,9 @@
-
-<div class="container-flex row flex-center contenedor-notfound">
+<!-- <div class="h-100vh w-100">
+<div class="container-flex row contenedor-notfound ">
   <div class="col-12 flex-center">
     <img src="../../assets/img/brand/ch_logo_pequeno.png" alt="">
   </div>
-  <div class="row no-gutter "> 
+  <div class="no-gutter "> 
     <div class="col-12 flex-center">
       <h1> sorry, no result found</h1>
      </div> 
@@ -11,4 +11,31 @@
       <h1> sorry, no result found</h1>
     </div> 
   </div>
+</div>
+</div> -->
+
+<div class="h-100vh w-100 ">
+    <div class="row no-gutters flex-center flex-column w-100 h-100 flex-center">
+      <div class="col-12  col-sm-8 col-md-6 col-lg-6 col-xl-4  px-4">
+        <div class="my-5">
+          <div class="avatar  m-auto contenedor-image col-12  px-4">
+            <img class="logo_circulo" src="../../assets/img/brand/logo.png" />
+          </div>
+          <div class="col-12  px-4">
+          <img class="contenedor-lupa" src="../../assets/img/brand/lupa.png" />
+        </div>
+        </div>
+        <div class="row flex-center ">
+        <div class="col-12   px-4 flex-center space letra-tex1">
+          No se encontraron resultados
+        </div>
+        <div class="col-12   px-4 flex-center space letra-tex2">
+          La página a la que estas intentando acceder no existe
+      </div>
+      <div class="col-12  px-4 flex-center space">
+        <button mat-button color="primary" [routerLink]="['']">Regresar</button>
+      </div>
+      </div>
+      </div>
+    </div>
 </div>

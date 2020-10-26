@@ -29,11 +29,13 @@
     "bootstrap": "^4.5.0",
     "c3": "^0.7.20",
     "d3": "^6.2.0",
+    "file-saver": "^2.0.2",
     "ngx-swiper-wrapper": "^9.0.1",
     "ngx-toastr": "^13.0.0",
     "roboto-fontface": "^0.10.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "xlsx": "^0.16.8",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
