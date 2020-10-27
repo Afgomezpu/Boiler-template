@@ -1,109 +1,69 @@
-<div class=" h-100">
-  <div class="h-100 w-100 flex-center ">
-    <div class="row contenedor_login_ambos   flex-center">
-      <div class="col-4  flex-center  tamano  ">
-      <div class="row h-100 no-gutters flex-center col-6 tamano ">
-        <div class="col-12  col-sm-12 col-md-12 col-lg-12 col-xl-12  px-4 justificar">
-          <div class="animate__animated animate__fadeIn  space logo_circulo_ico   flex-center">
-            <div class="  animate__animated animate__zoomIn ">
-              <img src="../../assets//img/brand/logo.png" class="w-100">
-              </div>         
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="col-8  flex-center ">
-    <div class="row h-100 no-gutters flex-center col-12">
-      <div class="col-12  col-sm-12 col-md-12 col-lg-12 col-xl-12  px-4  justificar">
-        <div class="animate__animated animate__fadeIn  space contenedor_login  flex-center">
+<div class="h-100 mascara">
+  <img src="../../assets/img/background/Wave.png" class="bg_login_wave">
+
+  <div class="row no-gutters h-100 justify-content-sm-center justify-content-md-end">
+
+    <div class="col-12 col-sm-8 col-md-6  col-lg-5">
+
+      <div class="flex-center flex-column h-100 p-2">
+
+        <div class="w-100  p-5 contenedor_form_login sombra position-relative">
           <div class="logo_circulo_icon sombra animate__animated animate__zoomIn ">
-            <img src="../../assets//img/brand/ch_logo_pequeno.png" class="w-100">
-            </div>
-            <div class="h-100vh w-100 ">
-              <form [formGroup]="formLogin" class="h-100 flex-center " novalidat>
-              <div class="row no-gutters flex-center flex-column w-100 ">
-                <div
-                  class="col-12  col-sm-8  col-md-8 col-lg-8 col-xl-8  px-4 justificar "
-                >
-                <div class="col-12 col-sm-8  col-md-8 col-lg-8 col-xl-8  px-4 justificar flex-center">
-                  <h1>Ingresar</h1>
-                </div>
-                
-          <mat-form-field class="w-100">
-          <mat-label>Correo</mat-label>
-          <input
-            matInput
-            type="text"
-            formControlName="email"
-            class="example-right-align"
-          />
-          <i class="fas fa-envelope mr-3" matPrefix></i>
-          <span
-            class="texto-pequeno error pos_texto_error"
-            *ngIf="
-              formLogin.controls.email.invalid &&
-              (formLogin.controls.email.dirty ||
-                formLogin.controls.email.touched)
-            "
-            >Este campo es requerido</span
-          >
-        </mat-form-field>
-        <mat-form-field class="w-100">
-          <mat-label>Contrasena</mat-label>
-          <input
-            matInput
-            [type]="showcontrasena ? 'text' : 'password'"
-            formControlName="contrasena"
-            class="example-right-align"
-          />
-          <i class="fas fa-lock mr-3" matPrefix></i>
-
-          <span
-            class="texto-pequeno error pos_texto_error"
-            *ngIf="
-              formLogin.controls.contrasena.errors?.required &&
-              formLogin.controls.contrasena.invalid &&
-              (formLogin.controls.contrasena.dirty ||
-                formLogin.controls.contrasena.touched)
-            "
-            >Este campo es requerido</span
-          >
-
-          <span
-            class="texto-pequeno error pos_texto_error"
-            *ngIf="
-              formLogin.controls.contrasena.errors?.pattern &&
-              formLogin.controls.contrasena.invalid &&
-              (formLogin.controls.contrasena.dirty ||
-                formLogin.controls.contrasena.touched)
-            "
-            >Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
-            número, 1 carácter especial</span
-          >
-        </mat-form-field>
-        <div class="flex-center">
-          <div class="">
-            <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">olvide mi contraseña?</button>
+            <img src="../../assets/img/brand/logo_chec.png">
           </div>
-        </div>
+          <form [formGroup]="formLogin" class="h-100  w-100 flex-center flex-column" novalidate>
+            <h1 class="fuente" class="my-3">Boiler Template</h1>
+            <mat-form-field class="w-100">
+              <mat-label>Correo</mat-label>
+              <input matInput type="text" formControlName="email" class="example-right-align" />
+              <i class="fas fa-envelope mr-3" matPrefix></i>
+              <span class="texto-pequeno error pos_texto_error" *ngIf="
+            formLogin.controls.email.invalid &&
+            (formLogin.controls.email.dirty ||
+              formLogin.controls.email.touched)
+          ">Este campo es requerido</span>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+              <mat-label>Contrasena</mat-label>
+              <input matInput [type]="showcontrasena ? 'text' : 'password'" formControlName="contrasena"
+                class="example-right-align" />
+              <i class="fas fa-lock mr-3" matPrefix></i>
 
-        <button
-          (click)="fn_submitFormLogin(formLogin)"
-          mat-raised-button
-          color="primary"
-          class="btn-outline-verde-secondary tamanobutton"
-        >
-          Ingresar
-        </button>
-       
+              <span class="texto-pequeno error pos_texto_error" *ngIf="
+            formLogin.controls.contrasena.errors?.required &&
+            formLogin.controls.contrasena.invalid &&
+            (formLogin.controls.contrasena.dirty ||
+              formLogin.controls.contrasena.touched)
+          ">Este campo es requerido</span>
+
+              <span class="texto-pequeno error pos_texto_error" *ngIf="
+            formLogin.controls.contrasena.errors?.pattern &&
+            formLogin.controls.contrasena.invalid &&
+            (formLogin.controls.contrasena.dirty ||
+              formLogin.controls.contrasena.touched)
+          ">Mínimo: 6 caracteres,1 letra en Mayúscula, 1 letra en Minúscula,1
+                número, 1 carácter especial</span>
+            </mat-form-field>
+            <div class="flex-center">
+              <div class="">
+                <button type="button" class="btn btn-link px-0" (click)="fn_stepper()">¿olvidó su
+                  contraseña?</button>
+              </div>
+            </div>
+
+            <button (click)="fn_submitFormLogin(formLogin)" mat-raised-button color="primary"
+              class="btn-verde-primary tamanobutton btn-block">
+              Ingresar
+            </button>
+
+          </form>
+        </div>
       </div>
+
     </div>
-  </form>
-</div>            
-      </div>
+    <div class="d-none  d-lg-block col-lg-1">
+
     </div>
   </div>
-</div>
-</div>
-</div>
+
 </div>

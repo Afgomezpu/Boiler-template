@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
         "",
         [
           Validators.required,
-          Validators.pattern(
+         /* Validators.pattern(
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-          ),
+          ),*/
         ],
       ],
     });
@@ -74,9 +74,10 @@ export class LoginComponent implements OnInit {
     this.ServicesProvider.validateAllFormFields(formGroup);
   }
  
-
   fn_stepper(){
-      const dialogRef = this.Stepper.open(StepperComponent);
+      const dialogRef = this.Stepper.open(StepperComponent, {
+        data: {"nombre":"andres" }
+      });
      }
 
   fn_Showcontrasena() {

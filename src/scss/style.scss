@@ -130,122 +130,104 @@ Color botones
   background-color: $azul_oscuro !important;
   color: $blanco;
   margin: 0.5% !important;
-  
 }
 
 .btn-azul {
   background-color: $azul !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 .btn-azul-claro {
   background-color: $azul_claro !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-azul-agua-marina {
   background-color: $azul_agua_marina !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-gris-primary {
   background-color: $gris_primary !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-gris-claro {
   background-color: $gris_claro !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 .btn-verde-primary {
   background-color: $verde_primary !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-verde-secondary {
   background-color: $verde_secondary !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-gris-secondary {
   background-color: $gris_secondary !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-azul-oscuro {
   background-color: $azul_oscuro !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-azul {
   background-color: $azul !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 .btn-azul-claro {
   background-color: $azul_claro !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-azul-agua-marina {
   background-color: $azul_agua_marina !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-gris-primary {
   background-color: $gris_primary !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 
 .btn-gris-claro {
   background-color: $gris_claro !important;
   color: $blanco;
   margin: 0.5% !important;
-
 }
 .btn-verde-primary {
   background-color: $verde_primary !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-verde-secondary {
   background-color: $verde_secondary !important;
   color: $blanco;
   margin: 0.5% !important;
-  
 }
 
 .btn-gris-secondary {
   background-color: $gris_secondary !important;
   color: $blanco;
   margin: 0.5% !important;
- 
 }
 
 .btn-outline-azul-oscuro {
@@ -253,21 +235,18 @@ Color botones
   color: $azul_oscuro !important;
   border: 1px solid $azul_oscuro !important;
   margin: 0.5% !important;
-
 }
 .btn-outline-azul {
   border: 1px solid $azul !important;
   background-color: $blanco !important;
   color: $azul !important;
   margin: 0.5% !important;
- 
 }
 .btn-outline-azul-claro {
   border: 1px solid $azul_claro !important;
   background-color: $blanco !important;
   color: $azul_claro !important;
   margin: 0.5% !important;
- 
 }
 
 .btn-outline-azul-agua-marina {
@@ -275,7 +254,6 @@ Color botones
   background-color: $blanco !important;
   color: $azul_agua_marina !important;
   margin: 0.5% !important;
-  
 }
 
 .btn-outline-gris-primary {
@@ -283,7 +261,6 @@ Color botones
   background-color: $blanco !important;
   color: $gris_primary !important;
   margin: 0.5% !important;
- 
 }
 
 .btn-outline-gris-claro {
@@ -291,14 +268,12 @@ Color botones
   background-color: $blanco !important;
   color: $gris_claro !important;
   margin: 0.5% !important;
-
 }
 .btn-outline-verde-primary {
   border: 1px solid $verde_primary !important;
   background-color: $blanco !important;
   color: $verde_primary !important;
   margin: 0.5% !important;
- 
 }
 
 .btn-outline-verde-secondary {
@@ -306,7 +281,6 @@ Color botones
   background-color: $blanco !important;
   color: $verde_secondary !important;
   margin: 0.5% !important;
-
 }
 
 .btn-outline-gris-secondary {
@@ -314,7 +288,6 @@ Color botones
   background-color: $blanco !important ;
   color: $gris_secondary !important;
   margin: 0.5% !important;
-
 }
 
 /*
@@ -412,7 +385,13 @@ cierre estilos de colores botones
 
 // Import styles
 
-/* fixed styles md boostrap*/
+/* fixed styles  boostrap*/
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: rgb(232, 240, 0) !important;
+  background-image: none !important;
+  color: -internal-light-dark(black, white) !important;
+}
 
 button:focus {
   outline: none !important;
