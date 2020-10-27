@@ -8,7 +8,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-
+import {ExcelService} from '../../providers/excel.service'
 import {MAT_TOOLTIP_DEFAULT_OPTIONS, MatTooltipDefaultOptions} from '@angular/material/tooltip';
 //./../assets/lib/jquery.enjoyhint.js
 //import '../../assets/lib/jquery.enjoyhint.js';
@@ -22,9 +22,35 @@ declare var EnjoyHint: any;
 })
 
 export class DemoComponent implements OnInit {
-  
+   
+  dataExcel: any = [
+    {
+      
+      "CATEGORYID": 1,
+      "CATEGORYNAME": "BOOKS",
+      "DESCRIPTION": "It contains all types of books",
+      "IMAGE": "Books",
+      "STATUS": "TRUE"
+    },
+    {
+      
+      "CATEGORYID": 2,
+      "CATEGORYNAME": "EBOOKS",
+      "DESCRIPTION": "It contains all types of ebooks",
+      "IMAGE": "Ebooks",
+      "STATUS": "TRUE"
+    },
+    {
+     
+      "CATEGORYID": 3,
+      "CATEGORYNAME": "Bookss",
+      "DESCRIPTION": "DESCRIPTION",
+      "IMAGE": "IMAGE",
+      "STATUS": "TRUE"
+    }
+  ]
   data: object = {};
-  constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,) {
+  constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,private excelService:ExcelService) {
     
     console.log(URL + WEBSERVICE.LOGIN);
   }
@@ -33,6 +59,7 @@ export class DemoComponent implements OnInit {
     const dialogRef = this.Swiper.open(SwiperComponent)
    }
 
+
   ngOnInit(): void {
     this.fn_ConsumirServicioWeb();
     this.graficarCirculo();
@@ -40,6 +67,11 @@ export class DemoComponent implements OnInit {
     setTimeout(() => {
       this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
     }, 5000);
+    this.exportAsXLSX();
+  }
+
+  exportAsXLSX():void {
+    this.excelService.exportAsExcelFile(this.dataExcel, 'myExcelFile');
   }
 
   fn_generarTour(){
@@ -76,7 +108,15 @@ export class DemoComponent implements OnInit {
     this.serviceProvider.fn_AbrirTour(pasos);
   }  
 
-
+  fn_generarModal(){
+    this.serviceProvider.fn_GenerarPopupGenerico(
+      'exito',
+      '¿Esta seguro de que desea eliminar los datos?',
+      'fn_EliminarCliente',
+      this,
+      1
+    );
+  }
 
   fn_EliminarCliente(id) {
     alert('entra' + id);

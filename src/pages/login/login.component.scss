@@ -40,26 +40,49 @@
   padding: 10px;
 }
 .contenedor_login_ambos {
-  background:white;
+ 
+  background: white;
+  background-image: url("../../assets/img/background/Wave-20s-1647px\ \(1\).png");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   border-radius: 5px;
-    height: min(80vh, 500px);
+  height: min(80vh, 500px);
   width: 80%;
   padding: 10px;
+  
+}
+
+.background-svg{
+  background-image: url('../../assets/img/background/Wave.png');
+  background-repeat: no-repeat;
+  
+}
+svg{
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
+h1{
+  font-family: 'Font Awesome 5 Free';
+  
+  display:flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
 .logo_circulo_icon {
   border-radius: 50%;
-  width: 75px;
-  height:75px;
+  width: 20%;
+  height:20%;
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: absolute;
-  top: 0px;
+  top: -20px;
   transform: translate(0px, -50%);
 }
 .logo_circulo_ico{

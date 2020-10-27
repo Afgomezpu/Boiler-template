@@ -20,9 +20,13 @@ import { catchError, retry } from 'rxjs/operators';
 import { URL, WEBSERVICE } from '../config/webservices';
 import { throwError } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+
+
+
 declare var EnjoyHint: any;
 @Injectable()
 export class ServicesProvider {
+
   private sUrl: string = URL;
   bPreloader: boolean = false;
   bPrimeraVezLupa: boolean = !localStorage.getItem('tour') ? true : false;
@@ -36,7 +40,9 @@ export class ServicesProvider {
     
   }
 
-  
+
+
+
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
