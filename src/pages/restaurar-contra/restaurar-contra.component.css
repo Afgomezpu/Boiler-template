@@ -1,0 +1,16 @@
+
+.bg_login_wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+
+
+
+  h2 {
+    font-family: cerebri-sans-bold;
+    color: #3c3c3c;
+    
+  }

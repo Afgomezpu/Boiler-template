@@ -19,16 +19,16 @@ const routes: Routes = [
   loadChildren:'../pages/components/sidenav/sidenav.module#SidenavModule'
   },
   
-  { path: 'Pagenotfound', 
+  { path: 'pagenotfound', 
   loadChildren:'../pages/page-not-found/page-not-found.module#PageNotFoundModule'
   }, 
 
-  { path: 'ResturarContrasena/:idtoken', 
+  { path: 'restaurarcontrasena/:idtoken', 
   loadChildren:'../pages/restaurar-contra/restaurar-contra.module#RestaurarContraModule' },
   
   {
     path: '**',
-    redirectTo: 'Pagenotfound',
+    redirectTo: 'pagenotfound',
   },
 ];
 

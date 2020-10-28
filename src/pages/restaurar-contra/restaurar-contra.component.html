@@ -1,13 +1,16 @@
-<div class="h-100vh w-100 background-error" >
+<div class="h-100vh w-100 " >
+  
+  <img src="../../assets/img/background/Wave.png" class="bg_login_wave">
+  
     <form [formGroup]="formRestaurar" class="h-100 flex-center styleform" novalidate>
       <div class="row no-gutters flex-center flex-column w-100">
         <div
           class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 px-4 container_login">
           <ng-container *ngIf="mostrarForm">
             
-              <div class=" flex-centerlink  m-auto">
-                <img class=" avatar avatarlink" src="../../assets/img/brand/ch_logo_pequeno.png" />   
-             <h3 class="texto_exito">Restablecer Contraseña</h3>
+              <div class="flex-column flex-centerlink  m-auto">
+                <img class=" avatar avatarlink my-3" src="../../assets/img/brand/ch_logo_pequeno.png" />   
+              <h2 class="texto_exito">Restablecer Contraseña</h2>
           </div>
         
             <mat-form-field class="w-100 flex-center">
@@ -30,14 +33,6 @@
                 "
                 >La contraseña debe contener 6 digitos</span
               >
-              <i
-              class="fa"
-              [ngClass]="{
-                'fa-eye-slash': !showcontrasena,
-                'fa-eye': showcontrasena
-              }"
-              (click)=" fn_Showcontrasena()"
-            ></i>
               <span
                 class="texto-pequeno error "
                 *ngIf="
@@ -60,14 +55,7 @@
                 class="example-right-align"
               />
               <i class="fas fa-lock mr-3" matPrefix></i>
-              <i
-              class="fa"
-              [ngClass]="{
-                'fa-eye-slash': !showcontrasena,
-                'fa-eye': showcontrasena
-              }"
-              (click)=" fn_Showcontrasena()"
-            ></i>
+              
               <span
                 class="texto-pequeno error pos_texto_error"
                 *ngIf="
@@ -107,13 +95,13 @@
             <button
               (click)="fn_submitformRestaurar(formRestaurar)"
               mat-raised-button
-              class="my-4 w-100  btn-outline-azul-claro"
+              class="my-4 w-100  btn-outline-verde-primary"
             >
               <i class="fas fa-unlock mr-3" matPrefix></i>
               CAMBIAR CONTRASEÑA
             </button>
           </ng-container>
-          <a href="" class="flex-centerlink">Volver</a>
+          <a href="" class="flex-center my-2">Volver</a>
           <div class="animated bounceIn" *ngIf="!mostrarForm">
             <i class="fas fa-check-circle fa-8x mt-5 animated bounceIn"></i>
             <h2 class="my-4 texto_exito">

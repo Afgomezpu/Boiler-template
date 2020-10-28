@@ -21,17 +21,17 @@
     <!-- #docregion label -->
     <mat-step>
       <ng-template matStepLabel>Confirmación</ng-template>
-      <p> En breve recibirás un correo electrónico con los pasos para restaurar tu cuenta {{data.nombre}}</p>
+      <p> En breve recibirás un correo electrónico con los pasos para restaurar tu cuenta </p>
       <div>
-        <button mat-button matStepperPrevious>Atras</button>
-        <button mat-button (click)="stepper.reset()">Reiniciar</button>
+        <!-- <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="stepper.reset()">Reiniciar</button> -->
       </div>
     </mat-step>
   </mat-horizontal-stepper>
 </div>
 <div class="modal-footer">
   <button mat-raised-button type="button" class="btn-verde-primary" matTooltip="Info about the action"
-    (click)="onNoClick()">Guardar</button>
+    (click)="onNoClick()">Finalizar</button>
 
 
 </div>
