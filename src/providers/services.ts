@@ -22,6 +22,7 @@ import { throwError } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 
 declare var EnjoyHint: any;
+declare var Odometer: any;
 @Injectable()
 export class ServicesProvider {
   private sUrl: string = URL;
@@ -222,5 +223,18 @@ export class ServicesProvider {
     } else {
       return false;
     }
+  }
+
+  fn_Odometer(element, value) {
+    var el = document.querySelector('.' + element);
+    let od = new Odometer({
+      el: el,
+      // Any option (other than auto and selector) can be passed in here
+      format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+      duration: 3000,
+      theme: 'default',
+    });
+
+    od.update(value);
   }
 }
