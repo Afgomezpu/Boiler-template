@@ -1,4 +1,13 @@
-<div class="row no-glutter flex-center margenes">
+<!-- para la grid siempre debe de estar un div con clase row no-gutters y no-gutters
+        la grilla se define como hijo del .row
+        <div class="row no-gutters">
+                <div class="col-12">
+                        <div class="contenido_x"
+
+-->
+
+
+<div class="row no-gutters flex-center">
 
         <h3>Estilos de fuentes <small>(Las fuentes se llaman con los siguientes nombres de clases)</small></h3>
 
@@ -13,10 +22,10 @@
 </div>
 <div>
         <hr>
-        <div class="row flex-center margenes">
+        <div class="row no-gutters flex-center margenes">
 
                 <h3>Generar tour</h3>
-                <div class="row col-12 flex-center borderbot">
+                <div class="row no-gutters col-12 flex-center borderbot">
 
                         <button mat-fab id="tour" class="btn-outline-azul-oscuro" (click)="fn_generarTour()">
                                 tour
@@ -25,7 +34,7 @@
                 </div>
 
                 <h3>Generar wizzard </h3>
-                <div class="row col-12 flex-center borderbot">
+                <div class="row no-gutters col-12 flex-center borderbot">
 
                         <button mat-fab id="inf" color="warn" matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
@@ -36,7 +45,7 @@
                 </div>
 
                 <h3>Generar Excel </h3>
-                <div class="row col-12 flex-center borderbot">
+                <div class="row no-gutters col-12 flex-center borderbot">
 
                         <button mat-fab id="inf" color="btn-gris-primary" matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
@@ -46,12 +55,24 @@
 
                 </div>
 
-                <div class="row flex-center borderbot">
+                <div class="row no-gutters flex-center borderbot">
 
                         <h3>Estilos botones rectangulares con fondo <small>(El boton seleccionado se llama con el nombre
                                         de clase)</small></h3>
 
-                        <div class="row col-12 flex-center">
+                        <div class="row no-gutters col-12 flex-center">
+
+
+                                <pre class="d-block">
+                                        <code>
+                                        <![CDATA[
+                                        <button mat-raised-button id="tour" class="btn-azul-oscuro">
+                                                .btn-azul-oscuro
+                                        </button>
+                                        ]]>
+                                        </code>
+                                </pre>
+
                                 <button mat-raised-button id="tour" class="btn-azul-oscuro">
                                         .btn-azul-oscuro
                                 </button>
@@ -98,10 +119,10 @@
                         </div>
                 </div>
                 <hr />
-                <div class="row flex-center ">
+                <div class="row no-gutters flex-center ">
                         <h3>Estilos botones rectangulares sin fondo <small>(El boton seleccionado se llama con el nombre
                                         de clase)</small></h3>
-                        <div class="row col-12 flex-center borderbot">
+                        <div class="row no-gutters col-12 flex-center borderbot">
                                 <button mat-raised-button id="tour" class="btn-outline-azul-oscuro">
                                         .btn-outline-azul-oscuro
                                 </button>
@@ -211,11 +232,29 @@
         </div>
         <table *ngIf="dataSource.length != 0" mat-table [dataSource]="dataSource" matSort
                 class="mat-elevation-z8 m-4 overflow-auto" style="width: 96% !important;">
+                <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                Id
+                        </th>
+                        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+                </ng-container>
                 <ng-container matColumnDef="nombre">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                                nombre
+                                Nombre
                         </th>
+                        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
                 </ng-container>
+                <ng-container matColumnDef="accion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="text-right">
+                                <i class="fa fa-eye mr-2 pointer" mat-stroked-button></i>
+                                <i class="fas fa-trash pointer" mat-stroked-button></i>
+
+                        </td>
+                </ng-container>
+
                 <tr mat-header-row *matHeaderRowDef="aColumnas"></tr>
                 <tr class="fila" mat-row *matRowDef="let row; columns: aColumnas"></tr>
         </table>

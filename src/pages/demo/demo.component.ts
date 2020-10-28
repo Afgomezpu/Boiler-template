@@ -82,6 +82,9 @@ export class DemoComponent implements OnInit {
       this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
     }, 5000);
     
+    ///generar datatable
+    this.fn_GenerarDataTable();
+
   }
 
   aplicarFiltro(inputFiltro: string) {
@@ -89,8 +92,8 @@ export class DemoComponent implements OnInit {
   }
 
   async fn_GenerarDataTable(){
-    this.aColumnas= [ "nombre"];
-    this.dataSource = await new MatTableDataSource([{'nombre':'gomez'}]);
+    this.aColumnas= [ "id","nombre","accion"];
+    this.dataSource = await new MatTableDataSource([{'nombre':'gomez',"id":1},{'nombre':'velez',"id":2}]);
     setTimeout(() => {
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -157,7 +160,15 @@ export class DemoComponent implements OnInit {
   fn_EliminarCliente(id) {
     alert('entra' + id);
   }
-
+  fn_MostrarPopupGenerico(item:any){
+    this.serviceProvider.fn_GenerarPopupGenerico(
+      'advertencia',
+      '¿Esta seguro de que desea eliminar los datos?',
+      'fn_EliminarCliente',
+      this,
+      item.id
+    );
+  }
   fn_ConsumirServicioWeb() {
     console.log(1);
     let oSendData = {
@@ -171,13 +182,7 @@ export class DemoComponent implements OnInit {
       .then((data) => {
         console.log(data);
         if (data) {
-          this.serviceProvider.fn_GenerarPopupGenerico(
-            'advertencia',
-            '¿Esta seguro de que desea eliminar los datos?',
-            'fn_EliminarCliente',
-            this,
-            1
-          );
+
         }
       })
       .catch((err) => {

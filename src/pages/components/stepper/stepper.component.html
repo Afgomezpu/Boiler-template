@@ -1,18 +1,17 @@
-
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Recupera tu cuenta</h4>
-        <button type="button" class="close" aria-label="Close" (click)="onNoClick()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+<div class="modal-header">
+  <h4 class="modal-title m-0" id="modal-basic-title">Recupera tu cuenta</h4>
+  <button type="button" class="close" aria-label="Close" (click)="onNoClick()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
+    <mat-step [stepControl]="oFormEmail">
+      <form [formGroup]="oFormEmail">
         <ng-template matStepLabel>Ingresa tu correo electrónico</ng-template>
         <mat-form-field>
           <mat-label>correo electrónico</mat-label>
-          <input matInput placeholder=" " formControlName="firstCtrl" required>
+          <input matInput placeholder=" " formControlName="correo" required>
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Siguiente</button>
@@ -29,13 +28,10 @@
       </div>
     </mat-step>
   </mat-horizontal-stepper>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="onNoClick()">Guardar</button>
-      </div>
+</div>
+<div class="modal-footer">
+  <button mat-raised-button type="button" class="btn-verde-primary" matTooltip="Info about the action"
+    (click)="onNoClick()">Guardar</button>
 
 
-
-
-  
-  
+</div>

@@ -16,8 +16,8 @@ import {
 })
 export class StepperComponent implements OnInit {
   closeResult = '';
-  isLinear = false;
-  firstFormGroup: FormGroup;
+  isLinear = true;
+  oFormEmail: FormGroup;
   secondFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,private modalService: NgbModal,
@@ -26,11 +26,11 @@ export class StepperComponent implements OnInit {
    ) { }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+    this.oFormEmail = this._formBuilder.group({
+      correo: ['', [Validators.required,Validators.email]]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      secondCtrl: ['', [Validators.required]]
     }); 
     console.log(this.data)
   }
