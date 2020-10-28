@@ -148,13 +148,6 @@ export class DemoComponent implements OnInit {
      this.serviceProvider.fn_GenerarPopupGenerico(titulo,cuerpo)
     }
 
-    // this.serviceProvider.fn_GenerarPopupGenerico(
-    //   'exito',
-    //   '¿Esta seguro de que desea eliminar los datos?',
-    //   'fn_EliminarCliente',
-    //   this,
-    //   1
-    // );
   }
 
   fn_EliminarCliente(id) {
@@ -178,7 +171,7 @@ export class DemoComponent implements OnInit {
     };
     this.serviceProvider.preloaderOn();
     this.serviceProvider
-      .post('posts', oSendData)
+      .post('posts1', oSendData)
       .then((data) => {
         console.log(data);
         if (data) {
