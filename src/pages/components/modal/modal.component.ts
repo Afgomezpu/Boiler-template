@@ -21,6 +21,7 @@ export class ModalComponent {
   }
 
   funcion_ok() {
+    console.log(this.data);
     this.data.component[this.data.funcion](this.data.param);
   }
 }

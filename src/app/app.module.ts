@@ -31,6 +31,7 @@ import {
   MatPaginatorIntl,
 } from '@angular/material/paginator';
 import { MatPaginatorIntlEsp } from '../traductions/matPaginatorIntl';
+import {MatRadioModule} from '@angular/material/radio';
 //import { MomentDateAdapter } from "@angular/material-moment-adapter";
 
 import { CommonModule } from '@angular/common';
@@ -39,7 +40,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'
 
 import {MatButtonModule} from '@angular/material/button';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {MatInputModule} from '@angular/material/input';
@@ -72,7 +73,11 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTableModule,
+    MatSortModule
   ],
 
   providers: [

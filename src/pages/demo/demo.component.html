@@ -1,21 +1,22 @@
-<div class="row no-glutter flex-center">
+<div class="row no-glutter flex-center margenes">
 
         <h3>Estilos de fuentes <small>(Las fuentes se llaman con los siguientes nombres de clases)</small></h3>
 
-        <div class="font-roboto-light col-12 flex-center">.roboto-light </div>
-        <div class="font-roboto-Condensed col-12 flex-center">.roboto-condensed</div>
-        <div class="font-quicksand-regular col-12 flex-center">.quicksand-regular</div>
-        <div class="font-arvo-bold col-12 flex-center">.arvo-bold</div>
-        <div class="font-blogger-sans col-12 flex-center">.blogger-sans</div>
-        <div class="font-lato-ligth col-12 flex-center">.lato-ligth</div>
-        <div class="font-myriad-pro col-12 flex-center">.myriad-pro</div>
+        <div class="font-roboto-light col-12 flex-center">.font-roboto-light </div>
+        <div class="font-roboto-Condensed col-12 flex-center">.font-roboto-condensed</div>
+        <div class="font-quicksand-regular col-12 flex-center">.font-quicksand-regular</div>
+        <div class="font-arvo-bold col-12 flex-center">.font-arvo-bold</div>
+        <div class="font-blogger-sans col-12 flex-center">.font-blogger-sans</div>
+        <div class="font-lato-ligth col-12 flex-center">.font-lato-ligth</div>
+        <div class="font-myriad-pro col-12 flex-center">.font-myriad-pro</div>
+        <div class="font-cerebri-Sans-Bold flex-center">.font-cerebri-sans-bold</div>
 </div>
 <div>
         <hr>
-        <div class="row flex-center">
+        <div class="row flex-center margenes">
 
                 <h3>Generar tour</h3>
-                <div class="row col-12 flex-center">
+                <div class="row col-12 flex-center borderbot">
 
                         <button mat-fab id="tour" class="btn-outline-azul-oscuro" (click)="fn_generarTour()">
                                 tour
@@ -24,7 +25,7 @@
                 </div>
 
                 <h3>Generar wizzard </h3>
-                <div class="row col-12 flex-center">
+                <div class="row col-12 flex-center borderbot">
 
                         <button mat-fab id="inf" color="warn" matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
@@ -34,18 +35,18 @@
 
                 </div>
 
-                <h3>Generar modal </h3>
-                <div class="row col-12 flex-center">
+                <h3>Generar Excel </h3>
+                <div class="row col-12 flex-center borderbot">
 
                         <button mat-fab id="inf" color="btn-gris-primary" matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
-                                (click)="fn_generarModal()">
-                                modal
+                                (click)="exportAsXLSX()">
+                                Excel
                         </button>
 
                 </div>
 
-                <div class="row flex-center">
+                <div class="row flex-center borderbot">
 
                         <h3>Estilos botones rectangulares con fondo <small>(El boton seleccionado se llama con el nombre
                                         de clase)</small></h3>
@@ -97,10 +98,10 @@
                         </div>
                 </div>
                 <hr />
-                <div class="row flex-center">
+                <div class="row flex-center ">
                         <h3>Estilos botones rectangulares sin fondo <small>(El boton seleccionado se llama con el nombre
                                         de clase)</small></h3>
-                        <div class="row col-12 flex-center">
+                        <div class="row col-12 flex-center borderbot">
                                 <button mat-raised-button id="tour" class="btn-outline-azul-oscuro">
                                         .btn-outline-azul-oscuro
                                 </button>
@@ -144,6 +145,30 @@
                                 </button>
                         </div>
                 </div>
+                <div class="flex-center row borderbot">
+                        <h3>Radio button <small>(El radio seleccionado se llama con el nombre de clase )</small></h3>
+                        <div class="col-12 flex-center">
+
+                                <mat-radio-button class="radio_azul_oscuro">.radio_azul_oscuro</mat-radio-button>
+                                <mat-radio-button class="radio_gris_primary">.radio_gris_primary</mat-radio-button>
+                                <mat-radio-button class="radio_verde_primary">.radio_verde_primary</mat-radio-button>
+                                <mat-radio-button class="radio_verde_secondary">.radio_verde_secondary
+                                </mat-radio-button>
+
+                        </div>
+                </div>
+                <hr>
+                <div class="flex-center row">
+                        <h3>checkbox <small>(El checkbox seleccionado se llama con el nombre de color )</small></h3>
+                        <div class="col-12 flex-center">
+                                <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
+                                <mat-checkbox color="verde_primary">verde_primary</mat-checkbox>
+                                <mat-checkbox color="verde_secondary">verde_secondary</mat-checkbox>
+                                <mat-checkbox color="text_primary">text_primary</mat-checkbox>
+                                <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
+                                <mat-checkbox color="azul_agua_marina">azul_agua_marina</mat-checkbox>
+                        </div>
+                </div>
 
         </div>
         <hr />
@@ -156,5 +181,49 @@
                 <h3>Grafica de barras</h3>
         </div>
         <div id="graficaBarras">grafica</div>
-
+        <hr>
+        <div class="flex-center">
+                <form [formGroup]="formModal" class="h-100  w-100 flex-center flex-column" novalidate>
+                        <h3 class="my-3">Modal</h3>
+                        <p>Ingrese el titulo del modal las opciones son:</p>
+                        <mat-form-field class="w-100 ">
+                                <mat-label class="flex-center">exito | advertencia | error </mat-label>
+                                <input matInput type="text" formControlName="titulo" class="example-center-align" />
+                        </mat-form-field>
+                        <p>Ingrese el cuerpo que es el mensaje correspondiente a el titulo:</p>
+                        <mat-form-field class="w-100">
+                                <mat-label class="flex-center">ejemplo: registro satisfactoriamente</mat-label>
+                                <input matInput type="text" formControlName="cuerpo" class="example-center-align" />
+                        </mat-form-field>
+                        <button (click)='fn_generarModal(formModal)'>Generar modal</button>
+                </form>
+        </div>
 </div>
+
+
+<div class="contenedor_tabla overflow-auto">
+        <div class="flex-grow-1">
+                <mat-form-field class="px-3 m-0 searchInput float-right" color="primary">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput placeholder="Filtro" (keyup)="aplicarFiltro($event.target.value)" />
+                        <i class="fas fa-search" matSuffix></i>
+                </mat-form-field>
+        </div>
+        <table *ngIf="dataSource.length != 0" mat-table [dataSource]="dataSource" matSort
+                class="mat-elevation-z8 m-4 overflow-auto" style="width: 96% !important;">
+                <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                nombre
+                        </th>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="aColumnas"></tr>
+                <tr class="fila" mat-row *matRowDef="let row; columns: aColumnas"></tr>
+        </table>
+        <mat-paginator *ngIf="dataSource.length != 0" [pageSize]="50" [pageSizeOptions]="[5, 10, 20, 50]"
+                showFirstLastButtons></mat-paginator>
+</div>
+
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator> -->

@@ -1,6 +1,6 @@
 
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Olvido Contraseña</h4>
+        <h4 class="modal-title" id="modal-basic-title">Recupera tu cuenta</h4>
         <button type="button" class="close" aria-label="Close" (click)="onNoClick()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -9,9 +9,9 @@
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Ingrese su correo</ng-template>
+        <ng-template matStepLabel>Ingresa tu correo electrónico</ng-template>
         <mat-form-field>
-          <mat-label>correo</mat-label>
+          <mat-label>correo electrónico</mat-label>
           <input matInput placeholder=" " formControlName="firstCtrl" required>
         </mat-form-field>
         <div>
@@ -20,23 +20,9 @@
       </form>
     </mat-step>
     <!-- #docregion label -->
-    <mat-step [stepControl]="secondFormGroup" label="Confirmacion correo">
-    <!-- #enddocregion label -->
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field>
-          <mat-label>Recibio correo ?</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Si o No"
-                 required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Atras</button>
-          <button mat-button matStepperNext>Siguiente</button>
-        </div>
-      </form>
-    </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Salir</ng-template>
-      <p>Recuperacion en proceso</p>
+      <ng-template matStepLabel>Confirmación</ng-template>
+      <p> En breve recibirás un correo electrónico con los pasos para restaurar tu cuenta</p>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
         <button mat-button (click)="stepper.reset()">Reiniciar</button>

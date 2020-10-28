@@ -46,9 +46,21 @@ html {
   font-family: myriad-pro;
   src: url(../assets/font/myriad-pro-8.otf) format("opentype");
 }
+
+@font-face {
+  font-family: cerebri-Sans-Bold;
+  src: url(../assets/font/Cerebri-Sans-Bold.ttf) format("opentype");
+}
 /*
 fuentes adicionales 
 */
+.font-cerebri-sans-bold {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "cerebri-Sans-Bold";
+}
+
 
 .font-lato-ligth {
   box-sizing: border-box;
@@ -393,10 +405,169 @@ input:-internal-autofill-selected {
   color: -internal-light-dark(black, white) !important;
 }
 
+
+
 button:focus {
   outline: none !important;
 }
+/* Inicio de los checkbox*/
 
+.mat-verde_primary {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background: $verde_primary !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background: $verde_primary;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background:$verde_primary!important;
+      }
+    }
+  }
+}
+
+.mat-verde_secondary {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background: $verde_secondary !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background: $verde_secondary;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background: $verde_secondary !important;
+      }
+    }
+  }
+}
+
+.mat-text_primary {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background:$text_primary !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background:$text_primary;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background:$text_primary !important;
+      }
+    }
+  }
+}
+
+.mat-azul_oscuro {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background: $azul_oscuro !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background: $azul_oscuro;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background: $azul_oscuro!important;
+      }
+    }
+  }
+}
+
+.mat-azul_agua_marina {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background: $azul_agua_marina !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background: $azul_agua_marina;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background: $azul_agua_marina!important;
+      }
+    }
+  }
+}
+
+.mat-azul_agua_marina {
+  .mat-checkbox-ripple {
+    .mat-ripple-element {
+      background: $azul_agua_marina !important;
+    }
+  }
+  &.mat-checkbox-checked {
+    .mat-checkbox-background {
+      background: $azul_agua_marina;
+    }
+    .mat-checkbox-ripple {
+      .mat-ripple-element {
+        background: $azul_agua_marina!important;
+      }
+    }
+  }
+}
+
+.mat-checkbox-inner-container{
+  margin-left: 8px !important;
+}
+
+/* fin de los checkbox*/
+
+/* inicio de las clase de radio button*/
+.radio_azul_oscuro{
+  &.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+     border-color: $azul_oscuro !important;
+
+   }
+     &.mat-radio-button.mat-accent .mat-radio-inner-circle{
+       background-color: $azul_oscuro  !important;
+       }
+   }
+
+   .radio_gris_primary{
+    &.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+       border-color:$gris_primary !important;
+     }
+       &.mat-radio-button.mat-accent .mat-radio-inner-circle{
+         background-color:$gris_primary !important;
+         }
+     }
+     
+     .radio_verde_primary{
+      &.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+         border-color: $verde_primary !important;
+       }
+         &.mat-radio-button.mat-accent .mat-radio-inner-circle{
+           background-color:$verde_primary !important;
+           }
+       }
+       
+       .radio_verde_secondary{
+        &.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+           border-color: $verde_secondary !important;
+         }
+           &.mat-radio-button.mat-accent .mat-radio-inner-circle{
+             background-color: $verde_secondary !important;
+             }
+         }   
+
+  .mat-radio-label-content{
+    margin-right: 8px !important;
+  }
+ /* fin de las clase de radio button*/
 .h1,
 h1 {
   font-size: 2.5rem !important;

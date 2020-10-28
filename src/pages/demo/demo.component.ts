@@ -1,7 +1,10 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, ViewChild } from '@angular/core';
 import { WEBSERVICE, URL } from '../../config/webservices';
 import { ServicesProvider } from '../../providers/services';
-import {SwiperComponent} from '../components/swiper/swiper.component'
+import {SwiperComponent} from '../components/swiper/swiper.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatPaginator } from "@angular/material/paginator";
+import { MatTableDataSource } from "@angular/material/table";
 import * as c3 from "c3";
 import {
   MatDialog,
@@ -10,6 +13,7 @@ import {
 } from '@angular/material/dialog';
 import {ExcelService} from '../../providers/excel.service'
 import {MAT_TOOLTIP_DEFAULT_OPTIONS, MatTooltipDefaultOptions} from '@angular/material/tooltip';
+import { MatSort } from '@angular/material/sort';
 //./../assets/lib/jquery.enjoyhint.js
 //import '../../assets/lib/jquery.enjoyhint.js';
 declare var EnjoyHint: any;
@@ -22,7 +26,12 @@ declare var EnjoyHint: any;
 })
 
 export class DemoComponent implements OnInit {
-   
+  @ViewChild(MatSort, {}) sort: MatSort;
+  @ViewChild(MatPaginator, {}) paginator: MatPaginator;
+  dataModal: object = {};
+  formModal:FormGroup;
+  dataSource:any=[];
+  aColumnas:Array<string>;
   dataExcel: any = [
     {
       
@@ -50,8 +59,13 @@ export class DemoComponent implements OnInit {
     }
   ]
   data: object = {};
-  constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,private excelService:ExcelService) {
-    
+  constructor(public serviceProvider: ServicesProvider,public Swiper: MatDialog,private excelService:ExcelService,public fb: FormBuilder) {
+ 
+     this.formModal=this.fb.group({
+      titulo:[''],
+      cuerpo:[''],
+      
+    })
     console.log(URL + WEBSERVICE.LOGIN);
   }
 
@@ -67,7 +81,20 @@ export class DemoComponent implements OnInit {
     setTimeout(() => {
       this.serviceProvider.fn_GenerarToast('exito', 'Muy bien campeón!');
     }, 5000);
-    this.exportAsXLSX();
+    
+  }
+
+  aplicarFiltro(inputFiltro: string) {
+    this.dataSource.filter = inputFiltro.trim().toLowerCase();
+  }
+
+  async fn_GenerarDataTable(){
+    this.aColumnas= [ "nombre"];
+    this.dataSource = await new MatTableDataSource([{'nombre':'gomez'}]);
+    setTimeout(() => {
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
   exportAsXLSX():void {
@@ -108,14 +135,23 @@ export class DemoComponent implements OnInit {
     this.serviceProvider.fn_AbrirTour(pasos);
   }  
 
-  fn_generarModal(){
-    this.serviceProvider.fn_GenerarPopupGenerico(
-      'exito',
-      '¿Esta seguro de que desea eliminar los datos?',
-      'fn_EliminarCliente',
-      this,
-      1
-    );
+  fn_generarModal(formGroup: FormGroup){
+    let titulo;
+    let cuerpo;
+    if (formGroup.valid) {
+     titulo=this.formModal.get('titulo').value;
+      cuerpo=this.formModal.get('cuerpo').value;
+     console.log(cuerpo);
+     this.serviceProvider.fn_GenerarPopupGenerico(titulo,cuerpo)
+    }
+
+    // this.serviceProvider.fn_GenerarPopupGenerico(
+    //   'exito',
+    //   '¿Esta seguro de que desea eliminar los datos?',
+    //   'fn_EliminarCliente',
+    //   this,
+    //   1
+    // );
   }
 
   fn_EliminarCliente(id) {
