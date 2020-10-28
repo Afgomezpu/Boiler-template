@@ -1,0 +1,22 @@
+.bg_login_wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+
+h2 {
+  font-family: cerebri-sans-bold;
+  color: #3c3c3c;
+}
+
+.logo_olvido_contrasena {
+  width: 45%;
+}
+
+.container_restaurar_contrasena {
+  height: 50em !important;
+  background: white;
+  border-radius: 5px;
+}

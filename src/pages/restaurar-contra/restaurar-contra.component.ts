@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesProvider } from '../../providers/services';
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute } from '@angular/router';
 import { WEBSERVICE, URL } from '../../config/webservices';
 
 @Component({
   selector: 'app-restaurar-contra',
   templateUrl: './restaurar-contra.component.html',
-  styleUrls: ['./restaurar-contra.component.css']
+  styleUrls: ['./restaurar-contra.component.scss'],
 })
 export class RestaurarContraComponent implements OnInit {
   data: object = {};
   formRestaurar: FormGroup;
   showcontrasena: boolean = false;
-  mostrarForm: boolean = true;
   constructor(
     public fb: FormBuilder,
     private ServicesProvider: ServicesProvider,
@@ -23,21 +22,21 @@ export class RestaurarContraComponent implements OnInit {
     this.formRestaurar = fb.group(
       {
         contrasena: [
-          "",
+          '',
           [
             Validators.required,
             Validators.pattern(
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-            )
+            ),
           ],
         ],
         repetir_contrasena: [
-          "",
+          '',
           [
             Validators.required,
             Validators.pattern(
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-            )
+            ),
           ],
         ],
       },
@@ -46,8 +45,8 @@ export class RestaurarContraComponent implements OnInit {
   }
   checkcontrasenas(group: FormGroup) {
     // here we have the 'contrasenas' group
-    let pass = group.get("contrasena").value;
-    let confirmPass = group.get("repetir_contrasena").value;
+    let pass = group.get('contrasena').value;
+    let confirmPass = group.get('repetir_contrasena').value;
     return pass === confirmPass ? null : { notSame: true };
   }
   validateAllFormFields(formGroup: FormGroup) {
@@ -56,24 +55,23 @@ export class RestaurarContraComponent implements OnInit {
   fn_submitformRestaurar(formGroup: FormGroup) {
     if (formGroup.valid) {
       let oRestaurar: any = {
-        contrasena: this.formRestaurar.get("contrasena").value,
+        contrasena: this.formRestaurar.get('contrasena').value,
         token: this.activatedRoute.snapshot.params.idtoken,
       };
       this.ServicesProvider.preloaderOn();
-      this.ServicesProvider
-      .post('posts', oRestaurar)
-      .then((data) => {
-        console.log(2);
-        this.data = data;
-        console.log(data);
-        this.ServicesProvider.preloaderOff();
-      })
-      .catch((err) => {
-        console.log(err, 'problema');
-      })
-      .finally(() => {
-        this.ServicesProvider.preloaderOff();
-      });
+      this.ServicesProvider.post('posts', oRestaurar)
+        .then((data) => {
+          console.log(2);
+          this.data = data;
+          console.log(data);
+          this.ServicesProvider.preloaderOff();
+        })
+        .catch((err) => {
+          console.log(err, 'problema');
+        })
+        .finally(() => {
+          this.ServicesProvider.preloaderOff();
+        });
     } else {
       this.validateAllFormFields(formGroup);
     }
@@ -82,7 +80,5 @@ export class RestaurarContraComponent implements OnInit {
     this.showcontrasena = !this.showcontrasena;
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
