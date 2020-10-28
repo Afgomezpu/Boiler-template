@@ -248,7 +248,8 @@ export class DemoComponent implements OnInit {
       },
     });
   }
-
+  //genera una animación con odometer,
+  //se debe pasar el nombre de la clase y el valor
   fn_GenerarOdometer() {
     this.serviceProvider.fn_Odometer('mostrar_odometer', 5);
   }
