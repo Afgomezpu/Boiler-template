@@ -21,7 +21,7 @@
     <!-- #docregion label -->
     <mat-step>
       <ng-template matStepLabel>Confirmación</ng-template>
-      <p> En breve recibirás un correo electrónico con los pasos para restaurar tu cuenta</p>
+      <p> En breve recibirás un correo electrónico con los pasos para restaurar tu cuenta {{data.nombre}}</p>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
         <button mat-button (click)="stepper.reset()">Reiniciar</button>

@@ -943,3 +943,13 @@ button {
   color: #5a5a5a;
   text-align: center;
 }
+
+#particles-js {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  background: transparent;
+  z-index: 1;
+}

@@ -21,31 +21,20 @@ import { URL, WEBSERVICE } from '../config/webservices';
 import { throwError } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 
-
-
 declare var EnjoyHint: any;
 @Injectable()
 export class ServicesProvider {
-
   private sUrl: string = URL;
   bPreloader: boolean = false;
   bPrimeraVezLupa: boolean = !localStorage.getItem('tour') ? true : false;
   constructor(
     private http: HttpClient,
     public modal: MatDialog,
-    private toastsService: AngularBootstrapToastsService,
-    
-  ) {
-
-    
-  }
-
-
-
-
+    private toastsService: AngularBootstrapToastsService
+  ) {}
 
   validateAllFormFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
+    Object.keys(formGroup.controls).forEach((field) => {
       const control = formGroup.get(field);
       if (control instanceof FormControl) {
         control.markAsTouched({ onlySelf: true });
@@ -193,7 +182,7 @@ export class ServicesProvider {
     this.toastsService.showSimpleToast(json_toast);
   }
 
-  fn_AbrirTour(pasos:any) {
+  fn_AbrirTour(pasos: any) {
     //this.serviceProvider.esconder_contenedor_busqueda = false;
     localStorage.setItem('tour', 'true');
     this.bPrimeraVezLupa = false;
@@ -202,7 +191,6 @@ export class ServicesProvider {
       skipButton: { className: 'mySkip', text: 'Omitir' },
     };
 
-    
     var enjoyhint_script_data = pasos;
     /*var enjoyhint_script_data = pasos.filter(
       (paso) => !paso.busqueda_realizada == !this.dashboardService.bCheckData
@@ -218,5 +206,21 @@ export class ServicesProvider {
         el.innerHTML = "Siguiente";
       });
     });*/
+  }
+
+  fn_CheckisMobile() {
+    if (
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
