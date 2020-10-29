@@ -1,20 +1,70 @@
-<p>
 <mat-sidenav-container class="example-container" *ngIf="shouldRun">
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-                 (closed)="events.push('close!')">
-                 <a href="#">item1</a>
-                 <br>
-                 <a href="#">item2</a>
+    <mat-sidenav class="" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">         
+               
+                <div class="row no-gutters">
+                <div class=" col-12">
+                <img src="../../../assets/img/brand/logo.png" class="bg_icon_wave">  
+               </div>
+               <div class="col-12">
+                 <h4 class="my-1 flex-center">Paginas</h4>
+              <mat-selection-list [multiple]="false" class="py-0">
+                  <mat-list-option class=" border-bottom border-top direccion_sidenav " > 
+                    <mat-icon mat-list-icon class="mx-2">
+                      <i class="fas fa-user color-icon"></i>
+                    </mat-icon>                   
+                    <a href="login">
+                       <h5 class="my-0">login</h5>
+                      </a>
+                  </mat-list-option>
+                  
+                  <mat-list-option class="border-bottom direccion_sidenav">  
+                    <mat-icon mat-list-icon class="mx-2">
+                      <i class="fas fa-window-close color-icon"></i>
+                    </mat-icon>
+                    
+                    <a href="pagenotfound">
+                    <h5 class="my-0">pagenotfound</h5>
+                    
+                   </a> </mat-list-option>
+                  </mat-selection-list>
+                </div>
+
+                <div class="col-12">
+                  <h4 class="my-1 flex-center">Componentes</h4>
+               <mat-selection-list [multiple]="false" class="py-0">
+                   <mat-list-option class=" border-bottom border-top direccion_sidenav " > 
+                     <mat-icon mat-list-icon class="mx-2">
+                       <i class="fas fa-location-arrow color-icon"></i>
+                     </mat-icon>                   
+                     <a href="login">
+                        <h5 class="my-0">Boton Fondo</h5>
+                       </a>
+                   </mat-list-option>
+                   
+                   <mat-list-option class="border-bottom direccion_sidenav">  
+                     <mat-icon mat-list-icon class="mx-2">
+                       <i class="fas fa-location-arrow color-icon"></i>
+                     </mat-icon>
+                     
+                     <a href="pagenotfound">
+                     <h5 class="my-0">Boton sin Fondo</h5>
+                     
+                    </a> </mat-list-option>
+                   </mat-selection-list>
+                 </div>
+              </div>
+                 
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar color="primary">
-      <p><button mat-button (click)="sidenav.toggle()">
-        <i class="fas fa-bars"></i>
-      </button></p>
-      <span>Principal</span>
+      <mat-toolbar class="background-navbar">
+      <button mat-button (click)="sidenav.toggle()" class="flex-center">
+        <i class="fas fa-bars fa-lg flex-center"></i>
+      </button>
+      <h4>principal</h4>
     </mat-toolbar>
     <app-demo></app-demo>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</p>
+
    

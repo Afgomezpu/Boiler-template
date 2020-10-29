@@ -176,7 +176,7 @@ export class DemoComponent implements OnInit {
     };
     this.serviceProvider.preloaderOn();
     this.serviceProvider
-      .post('posts1', oSendData)
+      .post('posts', oSendData)
       .then((data) => {
         console.log(data);
         if (data) {

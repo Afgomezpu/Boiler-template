@@ -1,3 +1,5 @@
+@import "../../../scss/variables.scss";
+
 .example-container {
     display: flex;
     flex-direction: column;
@@ -29,4 +31,42 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
-  
+
+  .bg_icon_wave{
+    width: 90%;
+    height: 100%;
+  }
+
+  h5 {
+    font-family: roboto-condensed;
+    color: #3c3c3c;
+  }
+
+  .container_sidenav{
+      height: 90%;
+      width: 60%;
+
+  }
+
+  .mat-drawer{
+    width: 20% !important;
+  }
+
+.color-icon{
+  color: rgb(0 0 0 / 42%);
+}
+
+.border-bottom{
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.border-top{
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.background-navbar{
+     background-color: $verde_primary;
+     color: white;
+     height: 7%;
+    width: 100%;
+}
