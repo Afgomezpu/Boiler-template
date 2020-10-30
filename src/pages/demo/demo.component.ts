@@ -32,6 +32,7 @@ export class DemoComponent implements OnInit {
   dataModal: object = {};
   formModal: FormGroup;
   dataSource: any = [];
+  element:any;
   aColumnas: Array<string>;
   dataExcel: any = [
     {

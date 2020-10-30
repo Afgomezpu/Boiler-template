@@ -1,119 +1,304 @@
-<!-- para la grid siempre debe de estar un div con clase row no-gutters y no-gutters
-        la grilla se define como hijo del .row
-        <div class="row no-gutters">
-                <div class="col-12">
-                        <div class="contenido_x"
+<div>
+        <div class="row no-gutters flex-center sombra border container-div">
+                <h3 class="col-12 my-3 flex-center">Estilos de fuentes</h3>
+                <p class="col-12"> Se utiliza el nombre  de la clase para identificar que tipo de fuentes se requieren</p>
 
--->
+                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
+                        <mat-tab label="Html">
+                                <pre>
+                                        <![CDATA[
+<div class="roboto-light">.roboto-light </div> 
+<div class="roboto-Condensed ">.roboto-condensed</div>
+<div class="quicksand-regular ">.quicksand-regular</div>
+<div class="arvo-bold ">.arvo-bold</div>
+<div class="blogger-sans ">.blogger-sans</div>
+<div class="lato-ligth ">.lato-ligth</div>
+<div class="myriad-pro ">.myriad-pro</div>
+<div class="cerebri-Sans-Bold ">.cerebri-sans-bold</div>                              
+                                        ]]>     
+                                </pre>
+                               
+                        </mat-tab>
 
-
-<div class="row no-gutters flex-center">
-
-        <h3>Estilos de fuentes <small>(Las fuentes se llaman con los siguientes nombres de clases)</small></h3>
-
-        <div class="roboto-light col-12 flex-center">.roboto-light </div>
-        <div class="roboto-Condensed col-12 flex-center">.roboto-condensed</div>
-        <div class="quicksand-regular col-12 flex-center">.quicksand-regular</div>
-        <div class="arvo-bold col-12 flex-center">.arvo-bold</div>
-        <div class="blogger-sans col-12 flex-center">.blogger-sans</div>
-        <div class="lato-ligth col-12 flex-center">.lato-ligth</div>
-        <div class="myriad-pro col-12 flex-center">.myriad-pro</div>
-        <div class="cerebri-Sans-Bold flex-center">.cerebri-sans-bold</div>
+                </mat-tab-group>
+                <hr>
+                <div>
+                        <div class="roboto-light col-12 flex-center">.roboto-light </div>
+                        <div class="roboto-Condensed col-12 flex-center">.roboto-condensed</div>
+                        <div class="quicksand-regular col-12 flex-center">.quicksand-regular</div>
+                        <div class="arvo-bold col-12 flex-center">.arvo-bold</div>
+                        <div class="blogger-sans col-12 flex-center">.blogger-sans</div>
+                        <div class="lato-ligth col-12 flex-center">.lato-ligth</div>
+                        <div class="myriad-pro col-12 flex-center">.myriad-pro</div>
+                        <div class="cerebri-Sans-Bold flex-center">.cerebri-sans-bold</div>
+                </div>
+        </div>
 </div>
 <div>
         <hr>
-        <div class="row no-gutters flex-center margenes">
+        <div class="row no-gutters flex-center margenes ">
+                <div class="sombra border container-div">
+                        <h3 class="col-12  my-3 flex-center">Generar tour</h3>
+                        <p class="col-12 ">Se genera el tour colocando los pasos en el cual se necesita que realice el 
+                                recorrido
+                        </p>
 
-                <h3>Generar tour</h3>
-                <div class="row no-gutters col-12 flex-center borderbot">
 
-                        <button mat-fab id="tour" class="btn-outline-azul-oscuro" (click)="fn_generarTour()"
-                                matTooltip="'below', 'above', 'left', 'right'" matTooltipPosition="left">
+                        <div class="row no-gutters col-12 flex-center ">
+
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
+                                        <mat-tab label="Html" class="flex-center">
+                                                <pre>
+                                                        <![CDATA[
+<button (click)="fn_generarTour()"> tour</button> 
+                                                        ]]>
+                                                       
+                                                </pre>
+                                        </mat-tab>
+                                        <mat-tab label="Ts">
+                                                <pre>
+                                                <![CDATA[
+ import { ServicesProvider } from '../../providers/services';
+  constructor (public serviceProvider: ServicesProvider){}
+                                                
+        fn_generarTour() 
+        {
+                 let pasos = [
+                 {
+                         selector: '.btn-azul-agua-marina',
+                        event: 'click',
+                        description:
+                        'Otra alternativa para abrir el panel de búsqueda, es haciendo click desde esta pestaña lateral ',
+                        showNext: true,
+                        showPrev: true,
+                        busqueda_realizada: true,
+                         },
+                        ];
+                                                    
+                this.serviceProvider.fn_AbrirTour(pasos);
+        }
+                                                ]]>
+                                                </pre>
+                                       
+                                        </mat-tab>
+                                </mat-tab-group>
+                                
+                                <button mat-fab id="tour" class="btn-outline-azul-oscuro"
+                                (click)="fn_generarTour()"
+                                matTooltip="'below', 'above', 'left', 'right'"
+                                matTooltipPosition="left">
                                 tour
 
                         </button>
+                        </div>
                 </div>
 
-                <h3>Generar wizzard </h3>
-                <div class="row no-gutters col-12 flex-center borderbot">
+                <div class="sombra border container-div">
+                        <h3 class="col-12 my-3 flex-center">Generar wizzard</h3>
+                        <p class="col-12 ">Se genera el wizzard colocando la informacion que se requiere en el
+                                en el componente de swiper y se llama de la siguiente manera
+                        </p>
+                        <div class="row no-gutters col-12 flex-center borderbot">
 
-                        <button mat-fab id="inf" color="warn" matTooltip="Info about the action"
-                                aria-label="Button that displays a tooltip when focused or hovered over"
-                                (click)="swiper()">
-                                <i class="fa fa-home"></i>
-                        </button>
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab label="Html" class="flex-center">
+                                                <pre>
+                                                        <![CDATA[
+ <button (click)="swiper()"><i class="fa fa-home"></i></button> 
+  ]]>
 
+</pre>        
+                                        </mat-tab>
+                                        <mat-tab label="Ts">
+
+                                                <pre><code>
+                                                <![CDATA[
+import { SwiperComponent } from '../components/swiper/swiper.component'; 
+import {MatDialog} from '@angular/material/dialog';  
+  constructor(public Swiper: MatDialog,){
+
+  }                                                      
+   swiper() 
+   {
+         const dialogRef = this.Swiper.open(SwiperComponent);
+   }
+                                                     
+                                                ]]>
+                                                </code>
+                                        </pre>
+                                        </mat-tab>
+                                </mat-tab-group>
+
+                                <button mat-fab id="inf" color="warn" matTooltip="Info about the action"
+                                                        aria-label="Button that displays a tooltip when focused or hovered over"
+                                                        (click)="swiper()">
+                                                        <i class="fa fa-home"></i>
+                                                </button>
+                        </div>
                 </div>
+                <div class="sombra border container-div">
+                        <h3 class="col-12 my-3 flex-center">Generar excel</h3>
+                        <p class="col-12 ">Se genera un archivo excel con los datos de un json o de una base de datos 
+                        </p>
+                        <div class="row no-gutters col-12 flex-center borderbot">
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab label="Html" class="flex-center">
+<pre><code>
+  <![CDATA[
+  <button (click)="exportAsXLSX()">  Excel</button> 
+  ]]>  
+    </code>
+                                        </pre>                                           
+                                        </mat-tab>
+                                        <mat-tab label="Ts">
+                                                <pre><code>
+ <![CDATA[
+import { ExcelService } from '../../providers/excel.service';
+ constructor(private excelService: ExcelService){
 
-                <h3>Generar Excel </h3>
-                <div class="row no-gutters col-12 flex-center borderbot">
-
-                        <button mat-fab id="inf" color="btn-gris-primary" matTooltip="Info about the action"
+ }
+  dataExcel: any = [
+    {
+      CATEGORYID: 1,
+      CATEGORYNAME: 'BOOKS',
+      DESCRIPTION: 'It contains all types of books',
+      IMAGE: 'Books',
+      STATUS: 'TRUE',
+    },
+    {
+      CATEGORYID: 2,
+      CATEGORYNAME: 'EBOOKS',
+      DESCRIPTION: 'It contains all types of ebooks',
+      IMAGE: 'Ebooks',
+      STATUS: 'TRUE',
+    },
+    {
+      CATEGORYID: 3,
+      CATEGORYNAME: 'Bookss',
+      DESCRIPTION: 'DESCRIPTION',
+      IMAGE: 'IMAGE',
+      STATUS: 'TRUE',
+    },
+  ];
+  exportAsXLSX(): void {
+  this.excelService.exportAsExcelFile(this.dataExcel, 'myExcelFile');
+ }
+                                                 ]]>
+                                                </code>
+                                        </pre>
+                                        </mat-tab>
+                                </mat-tab-group>
+                                <button mat-fab id="inf" color="btn-gris-primary"
+                                matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
                                 (click)="exportAsXLSX()">
                                 Excel
                         </button>
-
+                        </div>
                 </div>
+                <div class="row no-gutters flex-center borderbot w-100">
+                        <div class="sombra border container-div">
+                                <h3 class="col-12 my-3 flex-center">Botones con fondo</h3>
+                                <p class="col-12 ">Para utilizar el boton que mas se adapte a lo que necesita se pone en la 
+                                        clase el nombre del boton
+                                </p>
 
-                <div class="row no-gutters flex-center borderbot">
+                                <div class="row no-gutters col-12 flex-center">
 
-                        <h3>Estilos botones rectangulares con fondo <small>(El boton seleccionado se llama con el nombre
-                                        de clase)</small></h3>
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                                <mat-tab label="Html" class="flex-center">
+                                                        <pre>
+                                                                <![CDATA[
+<button mat-raised-button class="btn-azul-oscuro"> .btn-azul-oscuro</button>
+<button mat-raised-button class="btn-azul"> .btn-azul </button>
+<button mat-raised-button class="btn-azul-claro">.btn-azul-claro</button>
+<button mat-raised-button class="btn-azul-agua-marina>.btn-azul-agua-marina</button>
+<button mat-raised-button class="btn-gris-primary">.btn-gris-primary</button>
+<button mat-raised-button class="btn-gris-claro">.btn-gris-claro</button>
+<button mat-raised-button class="btn-verde-primary">.btn-verde-primary</button>
+<button mat-raised-button class="btn-verde-secondary>.btn-verde-secondary</button>
+<button mat-raised-button class="btn-gris-secondary">.btn-gris-secondary</button>                                                        
 
-                        <div class="row no-gutters col-12 flex-center">
+                                        ]]>
+                                                
+                                        </pre>
+                                                </mat-tab>
+                                        </mat-tab-group>
+                                        <button mat-raised-button id="tour" class="btn-azul-oscuro">
+                                                .btn-azul-oscuro
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-azul"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-azul
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-azul-claro"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-azul-claro
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-azul-agua-marina"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-azul-agua-marina
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-gris-primary"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-gris-primary
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-gris-claro"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-gris-claro
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-verde-primary"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-verde-primary
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-verde-secondary"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-verde-secondary
+                                        </button>
+                                        <button mat-raised-button id="tour" class="btn-gris-secondary"
+                                                matTooltip="Info about the action"
+                                                aria-label="Button that displays a tooltip when focused or hovered over">
+                                                .btn-gris-secondary
+                                        </button>
 
-                                <button mat-raised-button id="tour" class="btn-azul-oscuro">
-                                        .btn-azul-oscuro
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-azul" matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-azul
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-azul-claro"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-azul-claro
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-azul-agua-marina"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-azul-agua-marina
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-gris-primary"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-gris-primary
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-gris-claro"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-gris-claro
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-verde-primary"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-verde-primary
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-verde-secondary"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-verde-secondary
-                                </button>
-                                <button mat-raised-button id="tour" class="btn-gris-secondary"
-                                        matTooltip="Info about the action"
-                                        aria-label="Button that displays a tooltip when focused or hovered over">
-                                        .btn-gris-secondary
-                                </button>
-
+                                </div>
                         </div>
                 </div>
                 <hr />
-                <div class="row no-gutters flex-center ">
-                        <h3>Estilos botones rectangulares sin fondo <small>(El boton seleccionado se llama con el nombre
-                                        de clase)</small></h3>
-                        <div class="row no-gutters col-12 flex-center borderbot">
-                                <button mat-raised-button id="tour" class="btn-outline-azul-oscuro">
+                <div class="row no-gutters flex-center w-100">
+                        <div class="sombra border container-div">
+                                <h3 class="col-12  my-3 flex-center">Botones sin fondo</h3>
+                                <p class="col-12 ">Para utilizar el boton que mas se adapte a lo que necesita se pone en la 
+                                        clase el nombre del boton
+                                </p>
+                                <div class="row no-gutters col-12 flex-center borderbot">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                                <mat-tab label="Html">
+                                                        <pre><code>
+                                                        <![CDATA[
+<button mat-raised-button  class="btn-outline-azul-oscuro">.btn-outline-azul-oscuro</button>
+<button mat-raised-button  class="btn-outline-azul"> .btn-azul</button>
+<button mat-raised-button  class="btn-outline-azul-claro">.btn-outline-azul-claro</button>
+<button mat-raised-button  class="btn-outline-azul-agua-marina">.btn-outline-azul-agua-marina</button>
+<button mat-raised-button  class="btn-outline-gris-primary">.btn-outline-gris-primary</button>
+<button mat-raised-button  class="btn-outline-gris-claro">.btn-outline-gris-claro</button>
+<button mat-raised-button  class="btn-outline-verde-primary">.btn-outline-verde-primary</button>
+<button mat-raised-button  class="btn-outline-verde-secondary">.btn-outline-verde-secondary</button>
+<button mat-raised-button  class="btn-outline-gris-secondary">.btn-outline-gris-secondary</button>
+                                                        ]]>
+                                                        </code>
+                                                </pre>
+                                                </mat-tab>
+                                        </mat-tab-group>
+                                        <button mat-raised-button id="tour"
+                                        class="btn-outline-azul-oscuro">
                                         .btn-outline-azul-oscuro
                                 </button>
                                 <button mat-raised-button id="tour" class="btn-outline-azul"
@@ -121,151 +306,460 @@
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-azul
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-azul-claro"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-azul-claro"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-outline-azul-claro
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-azul-agua-marina"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-azul-agua-marina"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-outline-azul-agua-marina
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-gris-primary"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-gris-primary"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-outline-gris-primary
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-gris-claro"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-gris-claro"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-outline-gris-claro
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-verde-primary"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-verde-primary"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         btn-outline-verde-primary
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-verde-secondary"
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-verde-secondary"
                                         matTooltip="Info about the action"
                                         aria-label="Button that displays a tooltip when focused or hovered over">
                                         .btn-outline-verde-secondary
                                 </button>
-                                <button mat-raised-button id="tour" class="btn-outline-gris-secondary">
+                                <button mat-raised-button id="tour"
+                                        class="btn-outline-gris-secondary">
                                         .btn-outline-gris-secondary
                                 </button>
+                                </div>
                         </div>
                 </div>
-                <div class="flex-center row borderbot">
-                        <h3>Radio button <small>(El radio seleccionado se llama con el nombre de clase )</small></h3>
-                        <div class="col-12 flex-center">
+                <div class="row no-gutters flex-center w-100 ">
+                        <div class="sombra border container-div ">
+                                <h3 class="col-12 my-3 flex-center">Radio Button</h3>
+                                <p class="col-12 ">Para utilizar el radio boton que mas se adapte a lo que necesita se pone en la 
+                                        clase el nombre del boton
+                                </p>
+                                <div class="col-12 flex-center">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                
+                                                <mat-tab label="Html">
+                                                        <pre><code>
+                                                        <![CDATA[
+<mat-radio-button class="radio_azul_oscuro">.radio_azul_oscuro</mat-radio-button>
+<mat-radio-button class="radio_gris_primary">.radio_gris_primary</mat-radio-button>
+<mat-radio-button class="radio_verde_primary">.radio_verde_primary</mat-radio-button>
+<mat-radio-button class="radio_verde_secondary">.radio_verde_secondary</mat-radio-button>
+                                                        ]]>
+                                                        </code>
+                                                </pre>
+                                                </mat-tab>
+                                        </mat-tab-group>
 
-                                <mat-radio-button class="radio_azul_oscuro">.radio_azul_oscuro</mat-radio-button>
-                                <mat-radio-button class="radio_gris_primary">.radio_gris_primary</mat-radio-button>
-                                <mat-radio-button class="radio_verde_primary">.radio_verde_primary</mat-radio-button>
-                                <mat-radio-button class="radio_verde_secondary">.radio_verde_secondary
+                                        
+                                </div>
+                                <div class="col-12 flex-center">
+                                <mat-radio-button class="radio_azul_oscuro">.radio_azul_oscuro
                                 </mat-radio-button>
-
+                                <mat-radio-button class="radio_gris_primary">.radio_gris_primary
+                                </mat-radio-button>
+                                <mat-radio-button class="radio_verde_primary">
+                                        .radio_verde_primary</mat-radio-button>
+                                <mat-radio-button class="radio_verde_secondary">
+                                        .radio_verde_secondary
+                                </mat-radio-button>
+                        </div>
                         </div>
                 </div>
                 <hr>
-                <div class="flex-center row">
-                        <h3>checkbox <small>(El checkbox seleccionado se llama con el nombre de color )</small></h3>
-                        <div class="col-12 flex-center">
+                <div class="flex-center row w-100">
+                        <div class="sombra border container-div">
+                                <h3 class="col-12 my-3 flex-center">Checkbox</h3>
+                                <p class="col-12 ">Para utilizar el Checkbox es necesario llamarlo con el color
+                                </p>
+                                <div class="col-12 flex-center">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                                <mat-tab label="Html">
+                                                        <pre><code>
+                                                        <![CDATA[
+<mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
+<mat-checkbox color="verde_primary">verde_primary</mat-checkbox>
+<mat-checkbox color="verde_secondary">verde_secondary</mat-checkbox>
+<mat-checkbox color="text_primary">text_primary</mat-checkbox>
+<mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
+<mat-checkbox color="azul_agua_marina">azul_agua_marina</mat-checkbox> 
+                                                        ]]>
+                                                        </code>
+                                                </pre>
+                                                </mat-tab>
+                                        </mat-tab-group>
+
+                                </div>
+                                <div class="flex-center col-12">      
                                 <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
-                                <mat-checkbox color="verde_primary">verde_primary</mat-checkbox>
-                                <mat-checkbox color="verde_secondary">verde_secondary</mat-checkbox>
-                                <mat-checkbox color="text_primary">text_primary</mat-checkbox>
-                                <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
-                                <mat-checkbox color="azul_agua_marina">azul_agua_marina</mat-checkbox>
+                                                        <mat-checkbox color="verde_primary">verde_primary</mat-checkbox>
+                                                        <mat-checkbox color="verde_secondary">verde_secondary
+                                                        </mat-checkbox>
+                                                        <mat-checkbox color="text_primary">text_primary</mat-checkbox>
+                                                        <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
+                                                        <mat-checkbox color="azul_agua_marina">azul_agua_marina
+                                                        </mat-checkbox>
+                                                </div>  
                         </div>
                 </div>
 
         </div>
         <hr />
-        <div class="flex-center">
-                <h3>Grafica circular</h3>
+        <div class="flex-center  w-100">
+                <div class="sombra border container-div">
+                        <div class="flex-center">
+                                <h3 class="my-3">Grafica circular</h3>
+                                
+                        </div>
+                        <p class="col-12 ">Para la utilizar la grafica circular  se necesita colocar un nombre de id para 
+                                que sea llamado del el ts y se pueda colocar la grafica en esta posición
+                        </p>
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab label="Html" class="flex-center">
+                                        <pre>
+                                                <![CDATA[
+<div id="graficaCircular" ></div>      
+]]>
+                                
+                        </pre>
+                                </mat-tab>
+                                <mat-tab label="Ts">
+                                        <pre><code>
+                                <![CDATA[
+import * as c3 from 'c3';
+graficarCirculo() {
+        c3.generate({
+          bindto: '#graficaCircular',
+          data: {
+            // iris data from R
+            columns: [
+              ['data1', 30],
+              ['data2', 120],
+            ],
+            colors: {
+              data1: '#00782b',
+              data2: '#9cc129',
+            },
+            type: 'pie',
+            onclick: function (d, i) {
+              console.log('onclick', d, i);
+            },
+            onmouseover: function (d, i) {
+              console.log('onmouseover', d, i);
+            },
+            onmouseout: function (d, i) {
+              console.log('onmouseout', d, i);
+            },
+          },
+        });
+      }
+                                                                ]]>
+                                </code>
+                        </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+                        <div id="graficaCircular"></div>
+                </div>
         </div>
-        <div id="graficaCircular" class="Colorgrafica"></div>
         <hr>
-        <div class="flex-center">
-                <h3>Grafica de barras</h3>
+
+        <div class="flex-center  w-100">
+                <div class="sombra border container-div">
+                        <div class="flex-center">
+                                <h3 class="my-3">Grafica de barras</h3>
+                        </div>
+                                <p class="col-12 ">Para la utilizar la grafica de barras  se necesita colocar un nombre de id para 
+                                        que sea llamado del el ts y se pueda colocar la grafica en esta posición
+                                </p>
+                        
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab label="Html" class="flex-center">
+                                        <pre><code>
+                                                <![CDATA[
+<div id="graficaBarras">grafica</div>
+]]>
+</code>
+</pre>
+                                </mat-tab>
+                                <mat-tab label="Ts">
+                                        <pre><code>
+                                <![CDATA[
+import * as c3 from 'c3';
+graficarBarra() {
+    c3.generate({
+      bindto: '#graficaBarras',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 130, 100, 140, 200, 150, 50],
+        ],
+        colors: {
+          data1: '#00782b',
+          data2: '#9cc129',
+        },
+
+        type: 'bar',
+      },
+      bar: {
+        width: {
+          ratio: 0.5, // this makes bar width 50% of length between ticks
+        },
+        // or
+        //width: 100 // this makes bar width 100px
+      },
+    });
+  }
+                                ]]>
+                                </code>
+                        </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+                        <div id="graficaBarras">grafica</div>
+                </div>
         </div>
-        <div id="graficaBarras">grafica</div>
+
         <hr>
-        <div class="flex-center">
-                <form [formGroup]="formModal" class="h-100  w-100 flex-center flex-column" novalidate>
+
+        <div class="flex-center  w-100">
+                
+                <div class="sombra border container-div">
+                        <h3 class="my-3 flex-center">Modal</h3>
+                        <p class="col-12">Para generar el modal generico es necesario colocar un titulo y un cuerpo ,si tambien
+                                necesita ejecutar una funcion , se colocan 3 parametros mas que son: el nombre de la funcion, 
+                                el objeto de clase que es this y un numero que es el parametro y de esta forma sale el Modal
+                                con dos botones para ejecutarse el metodo que se requiere.  
+                        </p>
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab label="Html" class="flex-center">
+                                        <pre><code>
+                                                <![CDATA[
+ <form [formGroup]="formModal" class="h-100  w-100 flex-center flex-column"
+    novalidate>
+   <mat-form-field class="w-100 ">
+        <mat-label class="flex-center">exito | advertencia | error
+        </mat-label>
+        <input matInput type="text" formControlName="titulo"
+        class="example-center-align" />
+        </mat-form-field>
+        <p>Ingrese el cuerpo que es el mensaje correspondiente a el titulo:</p>
+        <mat-form-field class="w-100">
+        <mat-label class="flex-center">ejemplo: registro
+                satisfactoriamente
+        </mat-label>
+         <input matInput type="text" formControlName="cuerpo"
+                class="example-center-align" />
+         </mat-form-field>
+   <button (click)='fn_generarModal(formModal)'>Generar modal</button>
+</form>
+                                        ]]>
+                                </code>
+                        </pre>
+                                </mat-tab>
+                                <mat-tab label="Ts">
+                                        <pre><code>
+                                        <![CDATA[
+import { ServicesProvider } from '../../providers/services';
+constructor (public serviceProvider: ServicesProvider){} 
+
+ fn_generarModal(formGroup: FormGroup) {
+  let titulo;
+  let cuerpo;
+  if (formGroup.valid) {
+    titulo = this.formModal.get('titulo').value;
+    cuerpo = this.formModal.get('cuerpo').value;
+    console.log(cuerpo);
+    this.serviceProvider.fn_GenerarPopupGenerico(titulo, cuerpo);
+        }
+                                            
+  }
+
+      
+                                        ]]>
+                                        </code>
+                                </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+                        <form [formGroup]="formModal" class="h-100  w-100 flex-center flex-column"
+                        novalidate>
                         <h3 class="my-3">Modal</h3>
                         <p>Ingrese el titulo del modal las opciones son:</p>
                         <mat-form-field class="w-100 ">
-                                <mat-label class="flex-center">exito | advertencia | error </mat-label>
-                                <input matInput type="text" formControlName="titulo" class="example-center-align" />
+                                <mat-label class="flex-center">exito | advertencia | error
+                                </mat-label>
+                                <input matInput type="text" formControlName="titulo"
+                                        class="example-center-align" />
                         </mat-form-field>
                         <p>Ingrese el cuerpo que es el mensaje correspondiente a el titulo:</p>
                         <mat-form-field class="w-100">
-                                <mat-label class="flex-center">ejemplo: registro satisfactoriamente</mat-label>
-                                <input matInput type="text" formControlName="cuerpo" class="example-center-align" />
+                                <mat-label class="flex-center">ejemplo: registro
+                                        satisfactoriamente</mat-label>
+                                <input matInput type="text" formControlName="cuerpo"
+                                        class="example-center-align" />
                         </mat-form-field>
                         <button (click)='fn_generarModal(formModal)'>Generar modal</button>
                 </form>
+                </div>
         </div>
 </div>
 
-
-<div class="contenedor_tabla overflow-auto">
-        <div class="flex-grow-1">
-                <mat-form-field class="px-3 m-0 searchInput float-right" color="primary">
-                        <mat-label>Buscar</mat-label>
-                        <input matInput placeholder="Filtro" (keyup)="aplicarFiltro($event.target.value)" />
-                        <i class="fas fa-search" matSuffix></i>
-                </mat-form-field>
-        </div>
-        <table *ngIf="dataSource.length != 0" mat-table [dataSource]="dataSource" matSort
-                class="mat-elevation-z8 m-4 overflow-auto" style="width: 96% !important;">
-                <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                                Id
-                        </th>
-                        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-                </ng-container>
-                <ng-container matColumnDef="nombre">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                                Nombre
-                        </th>
-                        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
-                </ng-container>
-                <ng-container matColumnDef="accion">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-
-                        </th>
-                        <td mat-cell *matCellDef="let element" class="text-right">
-                                <i class="fa fa-eye mr-2 pointer" mat-stroked-button></i>
-                                <i class="fas fa-trash pointer" mat-stroked-button></i>
-
-                        </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="aColumnas"></tr>
-                <tr class="fila" mat-row *matRowDef="let row; columns: aColumnas"></tr>
-        </table>
-        <mat-paginator *ngIf="dataSource.length != 0" [pageSize]="50" [pageSizeOptions]="[5, 10, 20, 50]"
-                showFirstLastButtons></mat-paginator>
-</div>
-
-
-<hr>
-<h4>Odometer</h4>
-<h3 class="w-100 text-center mostrar_odometer cerebri-Sans-Bold"></h3>
-<hr>
-
+<div class="flex-center  w-100">
+        <div class="sombra border container-div">
+                <div class="contenedor_tabla overflow-auto">
+                        <div class="flex-center">
+                                <h3 class="my-3">Paginacion</h3>
+                        </div>
+                                <p class="col-12 ">Para la utilizar la grafica de barras  se necesita colocar un nombre de id para 
+                                        que sea llamado del el ts y se pueda colocar la grafica en esta posición
+                                </p>
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab label="Html" class="flex-center">
+                    
 <pre><code>
         <![CDATA[
-        let nombre_clase="mostrar_odometer";
-        let valor=5;
-        this.serviceProvider.fn_Odometer(nombre_clase, valor);
+
+        <mat-paginator *ngIf="dataSource.length != 0" [pageSize]="50"
+                [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons>
+        </mat-paginator>
         ]]>
-        </code></pre>
-<!-- <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator> -->
+        </code>
+</pre>
+
+                                </mat-tab>
+                                <mat-tab label="Codigo">
+                                        <pre><code>
+                                <![CDATA[
+
+import { MatTableDataSource } from '@angular/material/table';
+
+@ViewChild(MatSort, {}) sort: MatSort;
+@ViewChild(MatPaginator, {}) paginator: MatPaginator;
+dataSource: any = [];
+aColumnas: Array<string>;
+
+   aplicarFiltro(inputFiltro: string) {
+       this.dataSource.filter = inputFiltro.trim().toLowerCase();
+     }
+   
+   async fn_GenerarDataTable() {
+       this.aColumnas = ['id', 'nombre', 'accion'];
+       this.dataSource = await new MatTableDataSource([
+         { nombre: 'gomez', id: 1 },
+         { nombre: 'velez', id: 2 },
+       ]);
+       setTimeout(() => {
+         this.dataSource.sort = this.sort;
+         this.dataSource.paginator = this.paginator;
+       });
+
+                                ]]>
+                                </code>
+                        </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+
+
+                </div>
+                <div class="flex-grow-1">
+                        <mat-form-field class="px-3 m-0 searchInput float-right"
+                                color="primary">
+                                <mat-label>Buscar</mat-label>
+                                <input matInput placeholder="Filtro"
+                                        (keyup)="aplicarFiltro($event.target.value)" />
+                                <i class="fas fa-search" matSuffix></i>
+                        </mat-form-field>
+                </div>
+                <table *ngIf="dataSource.length != 0" mat-table [dataSource]="dataSource"
+                        matSort class="mat-elevation-z8 m-4 overflow-auto"
+                        style="width: 96% !important;">
+                        <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                        Id
+                                </th>
+                                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="nombre">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                        Nombre
+                                </th>
+                                <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="accion">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+
+                                </th>
+                                <td mat-cell *matCellDef="let element" class="text-right">
+                                        <i class="fa fa-eye mr-2 pointer"
+                                        mat-stroked-button></i>
+                                        <i class="fas fa-trash pointer" mat-stroked-button></i>
+                                </td>
+                        </ng-container>
+                                                
+                                        
+                        <tr mat-header-row *matHeaderRowDef="aColumnas"></tr>
+                        <tr class="fila" mat-row *matRowDef="let row; columns: aColumnas"></tr>
+                </table>
+                <mat-paginator *ngIf="dataSource.length != 0" [pageSize]="50"
+                        [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons>
+                </mat-paginator>
+        </div>
+</div>
+
+
+<div class="row no-gutters flex-center w-100 ">
+        <div class="sombra border container-div ">
+                <h3 class="col-12 my-3 flex-center">Odometer</h3>
+                
+                <div class="col-12 flex-center">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                
+                                <mat-tab label="Html">
+                                        <pre><code>
+                                        <![CDATA[
+ <h3 class="mostrar_odometer"></h3>
+                                        ]]>
+                                        </code>
+                                </pre>
+                                </mat-tab>
+
+                                <mat-tab label="Ts">
+                                        <pre><code>
+                                        <![CDATA[
+
+ import { ServicesProvider } from '../../providers/services';
+constructor (public serviceProvider: ServicesProvider){}
+ fn_GenerarOdometer() {
+  this.serviceProvider.fn_Odometer('mostrar_odometer', 5);
+   } 
+                                        ]]>
+                                        </code>
+                                </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+
+                        
+                </div>
+                <div class="col-12 flex-center">
+                        <h3 class="w-100 text-center mostrar_odometer cerebri-Sans-Bold"></h3>
+        </div>
+        </div>
+</div>

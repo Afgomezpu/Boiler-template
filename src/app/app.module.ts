@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //declaraciones componentes
 import { LoginComponent, DemoComponent } from '../pages/index.pages';
 import { ModalComponent } from '../pages/components/modal/modal.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ServicesProvider } from '../providers/services';
@@ -93,6 +94,8 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
     MatTableModule,
     MatSortModule,
     MatTooltipModule,
+    MatButtonToggleModule,
+    MatTabsModule,
   ],
 
   providers: [

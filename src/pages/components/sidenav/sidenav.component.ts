@@ -14,8 +14,13 @@ export class SidenavComponent implements OnInit {
 
   shouldRun = true;
 
-
+ 
   ngOnInit(): void {
+  }
+
+
+  scroll(el:HTMLElement){
+    el.scrollIntoView(); 
   }
 
 }
