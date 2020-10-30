@@ -3,7 +3,7 @@
                 <h3 class="col-12 my-3 flex-center">Estilos de fuentes</h3>
                 <p class="col-12"> Se utiliza el nombre  de la clase para identificar que tipo de fuentes se requieren</p>
 
-                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
+                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100  borderbot">
                         <mat-tab label="Html">
                                 <pre>
                                         <![CDATA[
@@ -22,7 +22,7 @@
 
                 </mat-tab-group>
                 <hr>
-                <div>
+                <div class="my-3">
                         <div class="roboto-light col-12 flex-center">.roboto-light </div>
                         <div class="roboto-Condensed col-12 flex-center">.roboto-condensed</div>
                         <div class="quicksand-regular col-12 flex-center">.quicksand-regular</div>
@@ -36,7 +36,8 @@
 </div>
 <div>
         <hr>
-        <div class="row no-gutters flex-center margenes ">
+        <div class="row no-gutters flex-center ">
+                <div class="borderbot w-100">
                 <div class="sombra border container-div">
                         <h3 class="col-12  my-3 flex-center">Generar tour</h3>
                         <p class="col-12 ">Se genera el tour colocando los pasos en el cual se necesita que realice el 
@@ -46,7 +47,7 @@
 
                         <div class="row no-gutters col-12 flex-center ">
 
-                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100  borderbot">
                                         <mat-tab label="Html" class="flex-center">
                                                 <pre>
                                                         <![CDATA[
@@ -83,16 +84,19 @@
                                         </mat-tab>
                                 </mat-tab-group>
                                 
-                                <button mat-fab id="tour" class="btn-outline-azul-oscuro"
+                                <div class="my-3">
+                                <button mat-fab id="tour" class="btn-outline-azul-oscuro "
                                 (click)="fn_generarTour()"
                                 matTooltip="'below', 'above', 'left', 'right'"
                                 matTooltipPosition="left">
                                 tour
 
                         </button>
+                </div>
                         </div>
                 </div>
-
+        </div>
+        <div class="borderbot w-100">
                 <div class="sombra border container-div">
                         <h3 class="col-12 my-3 flex-center">Generar wizzard</h3>
                         <p class="col-12 ">Se genera el wizzard colocando la informacion que se requiere en el
@@ -100,7 +104,7 @@
                         </p>
                         <div class="row no-gutters col-12 flex-center borderbot">
 
-                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100  borderbot">
                                         <mat-tab label="Html" class="flex-center">
                                                 <pre>
                                                         <![CDATA[
@@ -128,20 +132,23 @@ import {MatDialog} from '@angular/material/dialog';
                                         </pre>
                                         </mat-tab>
                                 </mat-tab-group>
-
+                                <div class="my-3">
                                 <button mat-fab id="inf" color="warn" matTooltip="Info about the action"
                                                         aria-label="Button that displays a tooltip when focused or hovered over"
                                                         (click)="swiper()">
                                                         <i class="fa fa-home"></i>
                                                 </button>
+                                </div>
                         </div>
                 </div>
+        </div>
+        <div class="borderbot w-100">
                 <div class="sombra border container-div">
                         <h3 class="col-12 my-3 flex-center">Generar excel</h3>
                         <p class="col-12 ">Se genera un archivo excel con los datos de un json o de una base de datos 
                         </p>
                         <div class="row no-gutters col-12 flex-center borderbot">
-                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100  borderbot">
                                         <mat-tab label="Html" class="flex-center">
 <pre><code>
   <![CDATA[
@@ -188,14 +195,17 @@ import { ExcelService } from '../../providers/excel.service';
                                         </pre>
                                         </mat-tab>
                                 </mat-tab-group>
+                                <div class="my-3">
                                 <button mat-fab id="inf" color="btn-gris-primary"
                                 matTooltip="Info about the action"
                                 aria-label="Button that displays a tooltip when focused or hovered over"
                                 (click)="exportAsXLSX()">
                                 Excel
                         </button>
+                                </div>
                         </div>
                 </div>
+        </div>
                 <div class="row no-gutters flex-center borderbot w-100">
                         <div class="sombra border container-div">
                                 <h3 class="col-12 my-3 flex-center">Botones con fondo</h3>
@@ -205,7 +215,7 @@ import { ExcelService } from '../../providers/excel.service';
 
                                 <div class="row no-gutters col-12 flex-center">
 
-                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                                 <mat-tab label="Html" class="flex-center">
                                                         <pre>
                                                                 <![CDATA[
@@ -224,6 +234,7 @@ import { ExcelService } from '../../providers/excel.service';
                                         </pre>
                                                 </mat-tab>
                                         </mat-tab-group>
+                                        <div class="my-3">
                                         <button mat-raised-button id="tour" class="btn-azul-oscuro">
                                                 .btn-azul-oscuro
                                         </button>
@@ -267,19 +278,19 @@ import { ExcelService } from '../../providers/excel.service';
                                                 aria-label="Button that displays a tooltip when focused or hovered over">
                                                 .btn-gris-secondary
                                         </button>
-
+                                        </div>
                                 </div>
                         </div>
                 </div>
                 <hr />
-                <div class="row no-gutters flex-center w-100">
+                <div class="row no-gutters flex-center w-100 borderbot">
                         <div class="sombra border container-div">
                                 <h3 class="col-12  my-3 flex-center">Botones sin fondo</h3>
                                 <p class="col-12 ">Para utilizar el boton que mas se adapte a lo que necesita se pone en la 
                                         clase el nombre del boton
                                 </p>
                                 <div class="row no-gutters col-12 flex-center borderbot">
-                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                                 <mat-tab label="Html">
                                                         <pre><code>
                                                         <![CDATA[
@@ -297,6 +308,7 @@ import { ExcelService } from '../../providers/excel.service';
                                                 </pre>
                                                 </mat-tab>
                                         </mat-tab-group>
+                                        <div class="my-3">
                                         <button mat-raised-button id="tour"
                                         class="btn-outline-azul-oscuro">
                                         .btn-outline-azul-oscuro
@@ -347,6 +359,7 @@ import { ExcelService } from '../../providers/excel.service';
                                         .btn-outline-gris-secondary
                                 </button>
                                 </div>
+                                </div>
                         </div>
                 </div>
                 <div class="row no-gutters flex-center w-100 ">
@@ -356,7 +369,7 @@ import { ExcelService } from '../../providers/excel.service';
                                         clase el nombre del boton
                                 </p>
                                 <div class="col-12 flex-center">
-                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                 
                                                 <mat-tab label="Html">
                                                         <pre><code>
@@ -373,7 +386,7 @@ import { ExcelService } from '../../providers/excel.service';
 
                                         
                                 </div>
-                                <div class="col-12 flex-center">
+                                <div class="col-12 flex-center my-3">
                                 <mat-radio-button class="radio_azul_oscuro">.radio_azul_oscuro
                                 </mat-radio-button>
                                 <mat-radio-button class="radio_gris_primary">.radio_gris_primary
@@ -387,13 +400,14 @@ import { ExcelService } from '../../providers/excel.service';
                         </div>
                 </div>
                 <hr>
+                
                 <div class="flex-center row w-100">
                         <div class="sombra border container-div">
                                 <h3 class="col-12 my-3 flex-center">Checkbox</h3>
                                 <p class="col-12 ">Para utilizar el Checkbox es necesario llamarlo con el color
                                 </p>
                                 <div class="col-12 flex-center">
-                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                                 <mat-tab label="Html">
                                                         <pre><code>
                                                         <![CDATA[
@@ -410,7 +424,7 @@ import { ExcelService } from '../../providers/excel.service';
                                         </mat-tab-group>
 
                                 </div>
-                                <div class="flex-center col-12">      
+                                <div class="flex-center col-12 my-3">      
                                 <mat-checkbox color="azul_oscuro">azul_oscuro</mat-checkbox>
                                                         <mat-checkbox color="verde_primary">verde_primary</mat-checkbox>
                                                         <mat-checkbox color="verde_secondary">verde_secondary
@@ -421,7 +435,8 @@ import { ExcelService } from '../../providers/excel.service';
                                                         </mat-checkbox>
                                                 </div>  
                         </div>
-                </div>
+                </div> 
+                
 
         </div>
         <hr />
@@ -434,7 +449,7 @@ import { ExcelService } from '../../providers/excel.service';
                         <p class="col-12 ">Para la utilizar la grafica circular  se necesita colocar un nombre de id para 
                                 que sea llamado del el ts y se pueda colocar la grafica en esta posición
                         </p>
-                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                 <mat-tab label="Html" class="flex-center">
                                         <pre>
                                                 <![CDATA[
@@ -478,7 +493,7 @@ graficarCirculo() {
                         </pre>
                                 </mat-tab>
                         </mat-tab-group>
-                        <div id="graficaCircular"></div>
+                        <div id="graficaCircular" class="my-3"></div>
                 </div>
         </div>
         <hr>
@@ -492,7 +507,7 @@ graficarCirculo() {
                                         que sea llamado del el ts y se pueda colocar la grafica en esta posición
                                 </p>
                         
-                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                 <mat-tab label="Html" class="flex-center">
                                         <pre><code>
                                                 <![CDATA[
@@ -534,7 +549,7 @@ graficarBarra() {
                         </pre>
                                 </mat-tab>
                         </mat-tab-group>
-                        <div id="graficaBarras">grafica</div>
+                        <div id="graficaBarras" class="my-3">grafica</div>
                 </div>
         </div>
 
@@ -549,7 +564,7 @@ graficarBarra() {
                                 el objeto de clase que es this y un numero que es el parametro y de esta forma sale el Modal
                                 con dos botones para ejecutarse el metodo que se requiere.  
                         </p>
-                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                 <mat-tab label="Html" class="flex-center">
                                         <pre><code>
                                                 <![CDATA[
@@ -599,7 +614,7 @@ constructor (public serviceProvider: ServicesProvider){}
                                 </pre>
                                 </mat-tab>
                         </mat-tab-group>
-                        <form [formGroup]="formModal" class="h-100  w-100 flex-center flex-column"
+                        <form [formGroup]="formModal" class="h-100   flex-center flex-column my-3"
                         novalidate>
                         <h3 class="my-3">Modal</h3>
                         <p>Ingrese el titulo del modal las opciones son:</p>
@@ -621,17 +636,17 @@ constructor (public serviceProvider: ServicesProvider){}
                 </div>
         </div>
 </div>
-
+<hr>
 <div class="flex-center  w-100">
         <div class="sombra border container-div">
                 <div class="contenedor_tabla overflow-auto">
                         <div class="flex-center">
                                 <h3 class="my-3">Paginacion</h3>
                         </div>
-                                <p class="col-12 ">Para la utilizar la grafica de barras  se necesita colocar un nombre de id para 
-                                        que sea llamado del el ts y se pueda colocar la grafica en esta posición
+                                <p class="col-12 ">Para utilizar la paginacion es necesario tener un  json, tabla
+                                        coleccion y se envian por medio de una funcion para que se pueda filtrar  
                                 </p>
-                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                                 <mat-tab label="Html" class="flex-center">
                     
 <pre><code>
@@ -723,14 +738,14 @@ aColumnas: Array<string>;
                 </mat-paginator>
         </div>
 </div>
-
+ <hr>
 
 <div class="row no-gutters flex-center w-100 ">
         <div class="sombra border container-div ">
                 <h3 class="col-12 my-3 flex-center">Odometer</h3>
                 
                 <div class="col-12 flex-center">
-                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
                 
                                 <mat-tab label="Html">
                                         <pre><code>
@@ -758,7 +773,7 @@ constructor (public serviceProvider: ServicesProvider){}
 
                         
                 </div>
-                <div class="col-12 flex-center">
+                <div class="col-12 flex-center my-3">
                         <h3 class="w-100 text-center mostrar_odometer cerebri-Sans-Bold"></h3>
         </div>
         </div>
