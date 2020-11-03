@@ -34,12 +34,12 @@ import {
 import { MatPaginatorIntlEsp } from '../traductions/matPaginatorIntl';
 import { MatRadioModule } from '@angular/material/radio';
 //import { MomentDateAdapter } from "@angular/material-moment-adapter";
-
+import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import { SwiperComponent } from '../pages/components/swiper/swiper.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
+import {MatBadgeModule} from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {
@@ -55,6 +55,7 @@ import { ToolbarComponent } from '../pages/components/toolbar/toolbar.component'
 import { StepperComponent } from '../pages/components/stepper/stepper.component';
 import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component';
 import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-contra.component';
+import { ModalGenericoComponent } from '../pages/components/modal-generico/modal-generico.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
     StepperComponent,
     PageNotFoundComponent,
     RestaurarContraComponent,
+    ModalGenericoComponent,
   ],
 
   imports: [
@@ -96,6 +98,8 @@ import { RestaurarContraComponent } from '../pages/restaurar-contra/restaurar-co
     MatTooltipModule,
     MatButtonToggleModule,
     MatTabsModule,
+    MatMenuModule,
+    MatBadgeModule,
   ],
 
   providers: [

@@ -5,6 +5,7 @@ import { SwiperComponent } from '../components/swiper/swiper.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import {ModalGenericoComponent} from '../components/modal-generico/modal-generico.component';
 import * as c3 from 'c3';
 import {
   MatDialog,
@@ -31,6 +32,7 @@ export class DemoComponent implements OnInit {
   @ViewChild(MatPaginator, {}) paginator: MatPaginator;
   dataModal: object = {};
   formModal: FormGroup;
+  formModalGenerico:FormGroup;
   dataSource: any = [];
   element:any;
   aColumnas: Array<string>;
@@ -61,13 +63,20 @@ export class DemoComponent implements OnInit {
   constructor(
     public serviceProvider: ServicesProvider,
     public Swiper: MatDialog,
+    public modalGenerico:MatDialog,
     private excelService: ExcelService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    public fbg: FormBuilder
   ) {
     this.formModal = this.fb.group({
       titulo: [''],
       cuerpo: [''],
     });
+    this.formModalGenerico=this.fbg.group({
+      titulo: [''],
+      cuerpo: [''],
+    });
+
     console.log(URL + WEBSERVICE.LOGIN);
   }
 
@@ -155,6 +164,22 @@ export class DemoComponent implements OnInit {
     }
 
   }
+
+  fn_generarModalGenerico(formGroup: FormGroup) {
+    let titulo;
+    let cuerpo;
+    if (formGroup.valid) {
+      titulo = this.formModalGenerico.get('titulo').value;
+      cuerpo = this.formModalGenerico.get('cuerpo').value;
+      console.log(cuerpo);
+      
+      this.modalGenerico.open(ModalGenericoComponent, {
+        data: { titulo: titulo , cuerpo:cuerpo },
+      });
+    }
+
+  }
+
 
   fn_EliminarCliente(id) {
     alert('entra' + id);

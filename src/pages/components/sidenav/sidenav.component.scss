@@ -6,6 +6,23 @@
   
   }
   
+  
+
+  .spacer_toolbar {
+    flex: 1 1 auto;
+  }
+
+  .contenedor_icono {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   .example-is-mobile .example-toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */

@@ -559,7 +559,7 @@ graficarBarra() {
                 
                 <div class="sombra border container-div">
                         <h3 class="my-3 flex-center">Modal</h3>
-                        <p class="col-12">Para generar el modal generico es necesario colocar un titulo y un cuerpo ,si tambien
+                        <p class="col-12">Para generar el modal con diseño es necesario colocar un titulo y un cuerpo ,si tambien
                                 necesita ejecutar una funcion , se colocan 3 parametros mas que son: el nombre de la funcion, 
                                 el objeto de clase que es this y un numero que es el parametro y de esta forma sale el Modal
                                 con dos botones para ejecutarse el metodo que se requiere.  
@@ -594,9 +594,14 @@ graficarBarra() {
                                         <pre><code>
                                         <![CDATA[
 import { ServicesProvider } from '../../providers/services';
-constructor (public serviceProvider: ServicesProvider){} 
-
- fn_generarModal(formGroup: FormGroup) {
+constructor (public serviceProvider: ServicesProvider ,public fb: FormBuilder){
+        this.formModal = this.fb.group({
+                titulo: [''],
+                cuerpo: [''],
+              });
+} 
+formModal: FormGroup;
+ fn_generarModal(formGroup: FormGroup   ) {
   let titulo;
   let cuerpo;
   if (formGroup.valid) {
@@ -635,6 +640,100 @@ constructor (public serviceProvider: ServicesProvider){}
                 </form>
                 </div>
         </div>
+
+        <div class="flex-center  w-100">
+                
+                <div class="sombra border container-div">
+                        <h3 class="my-3 flex-center">Modal generico</h3>
+                        <p class="col-12">Para generar el modal generico es necesario colocar un titulo y un cuerpo 
+                        </p>
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs w-100 borderbot">
+                                <mat-tab label="Html" class="flex-center">
+                                        <pre><code>
+                                                <![CDATA[
+
+asdfasdf
+<form [formGroup]="formModalGenerico" class="h-100   flex-center flex-column my-3"
+                        novalidate>
+                        <h3 class="my-3">Modal Generico</h3>
+                        <p>Ingrese el titulo del modal:</p>
+                        <mat-form-field class="w-100 ">
+                                <mat-label class="flex-center">titulo
+                                </mat-label>
+                                <input matInput type="text" formControlName="titulo"
+                                        class="example-center-align" />
+                        </mat-form-field>
+                        <p>Ingrese el cuerpo que es el mensaje correspondiente a el titulo:</p>
+                        <mat-form-field class="w-100">
+                                <mat-label class="flex-center">ejemplo: registro
+                                        satisfactoriamente</mat-label>
+                                <input matInput type="text" formControlName="cuerpo"
+                                        class="example-center-align" />
+                        </mat-form-field>
+                        <button (click)='fn_generarModalGenerico(formModalGenerico)'>Generar modal</button>
+                </form>
+                </div>
+        </div>
+
+                                        ]]>
+                                </code>
+                        </pre>
+                                </mat-tab>
+                                <mat-tab label="Ts">
+                                        <pre><code>
+                                        <![CDATA[
+import {ModalGenericoComponent} from '../components/modal-generico/modal-generico.component';
+constructor (public fbg: FormBuilder){
+       
+        this.formModalGenerico=this.fbg.group({
+                titulo: [''],
+                cuerpo: [''],
+              });
+
+} 
+
+formModalGenerico:FormGroup;
+ fn_generarModal(formGroup: FormGroup)
+  {
+  let titulo;
+  let cuerpo;
+  if (formGroup.valid) {
+    titulo = this.formModal.get('titulo').value;
+    cuerpo = this.formModal.get('cuerpo').value;
+    console.log(cuerpo);
+    this.serviceProvider.fn_GenerarPopupGenerico(titulo, cuerpo);
+        }
+                                            
+  }
+
+      
+                                        ]]>
+                                        </code>
+                                </pre>
+                                </mat-tab>
+                        </mat-tab-group>
+                        <form [formGroup]="formModalGenerico" class="h-100   flex-center flex-column my-3"
+                        novalidate>
+                        <h3 class="my-3">Modal Generico</h3>
+                        <p>Ingrese el titulo del modal:</p>
+                        <mat-form-field class="w-100 ">
+                                <mat-label class="flex-center">titulo
+                                </mat-label>
+                                <input matInput type="text" formControlName="titulo"
+                                        class="example-center-align" />
+                        </mat-form-field>
+                        <p>Ingrese el cuerpo que es el mensaje correspondiente a el titulo:</p>
+                        <mat-form-field class="w-100">
+                                <mat-label class="flex-center">ejemplo: registro
+                                        satisfactoriamente</mat-label>
+                                <input matInput type="text" formControlName="cuerpo"
+                                        class="example-center-align" />
+                        </mat-form-field>
+                        <button (click)='fn_generarModalGenerico(formModalGenerico)'>Generar modal</button>
+                </form>
+                </div>
+        </div>
+
 </div>
 <hr>
 <div class="flex-center  w-100">

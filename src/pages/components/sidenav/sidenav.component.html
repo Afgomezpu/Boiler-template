@@ -33,11 +33,23 @@
                  
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar class="background-navbar">
-      <button mat-button (click)="sidenav.toggle()" class="flex-center">
+      <mat-toolbar class="background-navbar ">
+        <button mat-button (click)="sidenav.toggle()" class="flex-center ">
         <i class="fas fa-bars fa-lg flex-center"></i>
       </button>
       <h4>principal</h4>
+      <span class="spacer_toolbar"></span>
+    <ul class="flex-center my-1 px-4">
+      <button mat-icon-button [matMenuTriggerFor]="afterMenu"> 
+          <img src="../../../assets/img/brand/foto-perfil.png" class="contenedor_icono" >   
+          <i class="fas fa-caret-down"></i>
+  
+      </button>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item>Cerrar Sesion</button>
+      </mat-menu>
+
+</ul>
     </mat-toolbar>
     <app-demo></app-demo>
     </mat-sidenav-content>
